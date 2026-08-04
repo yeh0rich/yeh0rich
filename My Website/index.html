@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- Crafted with ❤️ by Yehor Avramenko (yeh0rich) - Web Designer & Developer -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yehor avramenko virtual machine</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Blurry office background -->
+    <div class="office-bg"></div>
+
+
+    <!-- Full-page drag zone -->
+    <div class="scene-wrapper" id="scene-wrapper">
+        <div class="macintosh-scene" id="mac-scene">
+
+            <!-- 3D Container (no drag on this — drag on scene-wrapper only) -->
+            <div class="mac-3d-container" id="mac-3d-container">
+                <div class="mac-3d-rotator" id="mac-3d-rotator">
+
+                    <!-- ===== FRONT FACE ===== -->
+                    <div class="mac-face mac-front">
+                        <!-- Solid beige backdrop to prevent see-through -->
+                        <div class="front-backdrop"></div>
+
+                        <div class="macintosh-top">
+                            <div class="macintosh-bezel">
+                                <div class="macintosh-screen" id="mac-screen">
+                                    <!-- CRT Overlay -->
+                                    <div class="crt-overlay" id="crt-overlay"></div>
+
+                                    <!-- Boot Screen -->
+                                    <div class="boot-screen" id="boot-screen">
+                                        <div class="boot-content">
+                                            <img src="images/hello.svg" alt="Boot" class="happy-mac-icon" id="happy-mac">
+                                            <div class="boot-progress-container" id="boot-progress-container">
+                                                <div class="boot-progress-bar" id="boot-progress-bar"></div>
+                                            </div>
+                                            <div class="boot-text" id="boot-text">starting up...</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Shutdown Screen -->
+                                    <div class="shutdown-screen" id="shutdown-screen">
+                                        <img src="images/hello.svg" alt="Goodbye" class="shutdown-hello" id="shutdown-hello">
+                                    </div>
+
+                                    <!-- Hello Animation Screen -->
+                                    <div class="hello-screen" id="hello-screen">
+                                        <svg class="hello-svg" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                                            <path id="hello-path" d="M30,120 C30,120 30,30 30,30 L30,80 C30,80 55,30 80,30 C105,30 80,80 80,80 L80,120 M100,80 C100,50 140,40 140,60 C140,85 95,85 95,110 C95,130 140,130 140,110 M160,30 L160,120 M180,30 L180,120 C180,120 220,120 220,90 C220,60 180,60 180,60 M240,80 C240,50 280,40 280,60 C280,85 235,85 235,110 C235,130 280,130 280,110 M295,75 C295,60 310,40 325,40 C340,40 340,60 340,75 C340,90 340,120 325,120 C310,120 295,90 295,75 Z"
+                                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Active Desktop Content -->
+                                    <div class="mac-active-content" id="mac-active-content">
+                                        <!-- Menu Bar -->
+                                        <div class="mac-menu-bar">
+                                            <div class="menu-left">
+                                                <div class="menu-item menu-logo-btn" id="menu-logo-btn" title="yeh0rich menu">
+                                                    <img src="images/pixellogo.svg" alt="Logo" class="menu-logo-img">
+                                                </div>
+                                                <div class="menu-item" id="menu-file">file</div>
+                                                <div class="menu-item" id="menu-edit">edit</div>
+                                                <div class="menu-item" id="menu-view">view</div>
+                                                <div class="menu-item" id="menu-special">special</div>
+                                            </div>
+                                            <div class="menu-right">
+                                                <div class="menu-item menu-sound" id="sound-toggle-btn">
+                                                    <i class="fas fa-volume-up sound-on-icon"></i>
+                                                    <i class="fas fa-volume-mute sound-off-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Desktop -->
+                                        <div class="mac-desktop" id="mac-desktop">
+                                            <div class="desktop-intro">
+                                                <p class="title" id="intro-text"></p>
+                                                <h1 class="greeting" id="nickname-text"></h1>
+                                                <p class="title" id="role-text"></p>
+                                                <p class="title" id="developer-text"></p>
+                                            </div>
+                                            <div class="desktop-icons">
+                                                <div class="desktop-icon" id="about-icon">
+                                                    <div class="icon-image"><i class="fas fa-info-circle"></i></div>
+                                                    <span class="icon-label">about</span>
+                                                </div>
+                                                <div class="desktop-icon" id="links-btn">
+                                                    <div class="icon-image"><i class="fas fa-link"></i></div>
+                                                    <span class="icon-label">links</span>
+                                                </div>
+                                                <div class="desktop-icon" id="work-btn">
+                                                    <div class="icon-image"><i class="fas fa-folder"></i></div>
+                                                    <span class="icon-label">work</span>
+                                                </div>
+                                                <div class="desktop-icon" id="faq-btn">
+                                                    <div class="icon-image"><i class="fas fa-question-circle"></i></div>
+                                                    <span class="icon-label">faq</span>
+                                                </div>
+                                                <div class="desktop-icon" id="contact-btn">
+                                                    <div class="icon-image"><i class="fas fa-envelope"></i></div>
+                                                    <span class="icon-label">contact</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Status Bar -->
+                                        <div class="mac-status-bar">
+                                            <span class="status-items">5 items</span>
+                                            <span class="status-disk">128K available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom section with power logo -->
+                        <div class="macintosh-bottom">
+                            <div class="mac-power-btn" id="casing-power-btn" title="click to power on/off">
+                                <i class="fas fa-power-off"></i>
+                            </div>
+                            <div class="floppy-slot"><div class="floppy-opening"></div></div>
+                            <div class="mac-model-label">yeh0rich</div>
+                        </div>
+                        <!-- Base -->
+                        <div class="macintosh-base"></div>
+                    </div>
+
+                    <!-- ===== BACK FACE ===== -->
+                    <div class="mac-face mac-back">
+                        <div class="back-fill"></div>
+                        <div class="back-panel">
+                            <!-- New handle cutout section -->
+                            <div class="back-top-section">
+                                <div class="back-handle-cutout"></div>
+                            </div>
+
+                            <!-- Main panel area -->
+                            <div class="back-main-area">
+                                <!-- Left column: info label -->
+                                <div class="back-left-col">
+                                    <div class="back-info-label">
+                                        <div class="info-logo-row">
+                                            <span class="info-apple">■</span>
+                                            <span class="info-title">VM Classic</span>
+                                        </div>
+                                        <div class="info-text-block">
+                                            Virtual Architecture Systems<br>
+                                            Sector 7G, Cybernet Grid<br>
+                                            Made by yehor avramenko<br>
+                                            Model Number: v33m69420
+                                        </div>
+                                        <div class="info-warning">
+                                            <div class="warning-flex">
+                                                <div class="warning-symbol"><span class="warning-triangle">⚠</span> <span class="warning-triangle">⚠</span></div>
+                                                <div class="warning-body">To prevent electrical shock, do not remove cover. No user serviceable parts inside. Refer servicing to qualified service personnel.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right column: vent grille + power -->
+                                <div class="back-right-col">
+                                    <div class="back-cooling-section">
+                                        <div class="barcode-sticker">
+                                            <div class="barcode-stripe thick"></div><div class="barcode-stripe gap"></div><div class="barcode-stripe thin"></div><div class="barcode-stripe thick"></div><div class="barcode-stripe thin"></div><div class="barcode-stripe gap"></div><div class="barcode-stripe thin"></div><div class="barcode-stripe gap"></div><div class="barcode-stripe thick"></div>
+                                        </div>
+                                        <div class="back-vent-grille"></div>
+                                    </div>
+                                    <div class="back-expansion-plate"></div>
+                                    <div class="back-power-area">
+                                        <div class="back-power-switch"><div class="switch-rocker"></div></div>
+                                        <div class="back-iec-port"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- QR code sticker above the port boundary -->
+                            <img src="images/qrcode.svg" class="back-qr-code" alt="QR Code">
+                        </div>
+                        <!-- Bottom ports panel -->
+                        <div class="macintosh-bottom back-bottom">
+                            <div class="back-ports-strip">
+                                <div class="port-item"><div class="port din"></div><div class="port-icon adb-icon">↔︎</div></div>
+                                <div class="port-item"><div class="port db25"></div><div class="port-icon scsi-icon">◇</div></div>
+                                <div class="port-item"><div class="port db25"></div><div class="port-icon floppy-icon">■</div></div>
+                                <div class="port-item"><div class="port din"></div><div class="port-icon printer-icon">⊟</div></div>
+                                <div class="port-item"><div class="port din"></div><div class="port-icon modem-icon">☏</div></div>
+                                <div class="port-item"><div class="port audio-jack"></div><div class="port-icon audio-icon">♫</div></div>
+                            </div>
+                        </div>
+                        <div class="macintosh-base"></div>
+                    </div>
+
+                    <!-- ===== LEFT FACE ===== -->
+                    <div class="mac-face mac-left">
+                        <div class="side-fill">
+                            <div class="side-seam"></div>
+                            <div class="side-vents">
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== RIGHT FACE ===== -->
+                    <div class="mac-face mac-right">
+                        <div class="side-fill">
+                            <div class="side-seam"></div>
+                            <div class="side-vents">
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                                <div class="side-vent-slit"></div><div class="side-vent-slit"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== TOP FACE ===== -->
+                    <div class="mac-face mac-top">
+                        <div class="top-panel"></div>
+                        <div class="mac-top-chamfer">
+                            <div class="top-chamfer-panel">
+                                <div class="top-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== BOTTOM FACE ===== -->
+                    <div class="mac-face mac-bottom-face">
+                        <div class="bottom-panel"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Below Mac: social & copyright -->
+        <div class="desk-area">
+            <!-- Rotation hint (always visible) -->
+            <div class="rotation-hint" id="rotation-hint">
+                <i class="fas fa-sync-alt"></i> drag outside to rotate
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/yeh0rich/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://t.me/yeh0rich" target="_blank" title="Telegram">
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+                <a href="https://www.instagram.com/yeh0rich/" target="_blank" title="Instagram">
+                    <div class="social-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24ZM128,176a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,176Zm60-96a12,12,0,1,1,12-12A12,12,0,0,1,188,80Zm-28,48a32,32,0,1,1-32-32A32,32,0,0,1,160,128Z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright">© 2025 yehor avramenko</div>
+        </div>
+    </div>
+
+    <!-- Popup Container -->
+    <div id="popup-container"></div>
+
+    <!-- Mobile notification -->
+    <div id="mobile-notification" class="mobile-notification">
+        <div class="notification-content">
+            <span class="notification-text">my website is optimized for mobile, but try viewing it on a larger screen for the best experience.</span>
+            <button class="notification-close" onclick="closeMobileNotification()">×</button>
+        </div>
+    </div>
+
+    <!-- Retro Easter Egg Trash Bin -->
+    <div id="retro-trash-bin" class="retro-trash-bin">
+        <svg class="trash-lid" viewBox="0 0 64 16" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+            <!-- Handle -->
+            <rect x="28" y="2" width="8" height="4" fill="#000" />
+            <!-- Lid Structure -->
+            <path d="M 4,6 h 56 v 2 h 2 v 4 h -60 v -4 h 2 z" fill="#fff" stroke="#000" stroke-width="2" />
+            <!-- Lid bottom rim -->
+            <rect x="3" y="10" width="58" height="2" fill="#000" />
+        </svg>
+        <svg class="trash-body" viewBox="0 0 64 50" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+            <!-- Body stepping inwards -->
+            <path d="M 4,0 v 4 h 1 v 6 h 1 v 6 h 1 v 30 h 50 v -30 h 1 v -6 h 1 v -6 h 1 v -4 z" 
+                  fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="miter"/>
+            <!-- Vertical rib lines -->
+            <path d="M 20,4 v 42 M 32,4 v 42 M 44,4 v 42" stroke="#000" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
