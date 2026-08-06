@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpview — Enterprise Software Engineering &amp; Applied AI</title>
+<meta name="description" content="Alpview builds bespoke ERP, CRM, workforce and AI-driven business applications for enterprises across the DACH region — from product strategy through operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="safe-line safe-line-l" aria-hidden="true"></div>
+<div class="safe-line safe-line-r" aria-hidden="true"></div>
+
+<!-- ======= NAV ======= -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav container">
+    <a href="#" class="logo" aria-label="Alpview home">
+      <img class="logo-mark" src="assets/logo-placeholder.svg" alt="" aria-hidden="true">
+      <span class="logo-word">ALPVIEW</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Solutions</a></li>
+      <li><a href="#work">Industries</a></li>
+      <li><a href="#process">Delivery</a></li>
+      <li><a href="#engagement">Engagement</a></li>
+      <li><a href="#team">Company</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-dark">Start a project <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Solutions</a>
+    <a href="#work">Industries</a>
+    <a href="#process">Delivery</a>
+    <a href="#engagement">Engagement</a>
+    <a href="#team">Company</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-primary">Start a project</a>
+  </div>
+</header>
+
+<!-- ======= SIDE QUICK-NAV TAB ======= -->
+<aside class="side-tab" id="sideTab" aria-label="Quick navigation">
+  <a href="#" class="side-tab-logo" aria-label="Alpview home">
+    <img class="logo-mark" src="assets/logo-placeholder.svg" alt="" aria-hidden="true">
+  </a>
+  <nav class="side-tab-links">
+    <a href="#services">Solutions</a>
+    <a href="#work">Industries</a>
+    <a href="#process">Delivery</a>
+    <a href="#team">Company</a>
+    <a href="#contact" class="btn btn-primary btn-gradient side-tab-contact">Contact</a>
+  </nav>
+</aside>
+
+<!-- ======= HERO ======= -->
+<section class="hero" data-line="light">
+  <div class="hero-gradient" aria-hidden="true"></div>
+  <div class="mesh mesh-hero" aria-hidden="true"><span class="mesh-dots"></span><span class="mesh-glow"></span></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-badge">
+        <span class="badge-pill">DACH</span>
+        <span>Enterprise software engineering &amp; applied AI</span>
+      </div>
+      <h1>Software for companies<br>whose processes don't fit<br>a standard solution</h1>
+      <p class="hero-sub">Alpview designs and builds bespoke ERP, CRM, workforce and AI-driven business applications for enterprises across Germany, Austria and Switzerland — end to end, from product strategy through operations.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-dark btn-lg">Start a project <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+        <a href="#services" class="btn btn-ghost btn-lg">Explore solutions <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="dash-card dash-main">
+        <div class="dash-header">
+          <span class="dash-title">Delivery pipeline</span>
+        </div>
+        <div class="dash-metric">
+          <span class="dash-label">Active engagement · Sprint 14</span>
+          <span class="dash-value">Enterprise Operations</span>
+          <span class="dash-delta">On track · quality gate passed</span>
+        </div>
+        <div class="dash-stages">
+          <div class="dash-stage"><span class="ds-dot ds-done"></span><span class="ds-label">Discover</span><span class="ds-bar" style="--w:100%"></span></div>
+          <div class="dash-stage"><span class="ds-dot ds-done"></span><span class="ds-label">Design</span><span class="ds-bar" style="--w:100%"></span></div>
+          <div class="dash-stage"><span class="ds-dot ds-active" id="dsActiveDot"></span><span class="ds-label">Build</span><span class="ds-bar ds-bar-live" style="--w:64%"></span></div>
+          <div class="dash-stage"><span class="ds-dot"></span><span class="ds-label">Assure</span><span class="ds-bar" style="--w:0%"></span></div>
+        </div>
+        <div class="dash-row">
+          <div class="dash-cell"><span class="dash-cell-label">Practice areas</span><span class="dash-cell-value">4</span></div>
+          <div class="dash-cell"><span class="dash-cell-label">DACH markets</span><span class="dash-cell-value">3</span></div>
+          <div class="dash-cell"><span class="dash-cell-label">Ownership</span><span class="dash-cell-value">End‑to‑end</span></div>
+        </div>
+      </div>
+      <div class="dash-card dash-float dash-float-bottom">
+        <span class="float-icon float-icon-alt">✓</span>
+        <div><span class="float-title">Quality gate passed</span><span class="float-sub">Enterprise Operations · Sprint 14</span></div>
+      </div>
+      <div class="dash-card dash-float dash-float-top">
+        <span class="float-icon float-icon-alt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+        <div><span class="float-title">Architecture review</span><span class="float-sub">Modernization &amp; Integration</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= STATS BAND (replaces a logo wall — see the quote below) ======= -->
+<section class="statscloud" data-line="dark">
+  <div class="container">
+    <p class="statscloud-label">Trust develops through clear structures, not a logo wall</p>
+    <div class="statscloud-row">
+      <div class="stat"><div class="stat-inner">
+        <span class="stat-num"><span class="stat-value" data-count="30">0</span><span class="stat-suffix">+</span></span><span class="stat-label">specialists in active projects</span>
+      </div></div>
+      <div class="stat"><div class="stat-inner">
+        <span class="stat-num"><span class="stat-value" data-count="4">0</span></span><span class="stat-label">core practice areas</span>
+      </div></div>
+      <div class="stat"><div class="stat-inner">
+        <span class="stat-num"><span class="stat-value" data-count="3">0</span></span><span class="stat-label">DACH markets served</span>
+      </div></div>
+      <div class="stat"><div class="stat-inner">
+        <span class="stat-num"><span class="stat-value" data-count="100">0</span><span class="stat-suffix">%</span></span><span class="stat-label">end-to-end ownership</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SERVICES ======= -->
+<section class="section" id="services" data-line="dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Solutions</span>
+      <h2>Four practice areas, one engineering org</h2>
+      <p>No stitching together freelancers and point vendors. Alpview covers the full lifecycle of enterprise software — strategy through operations — under a single roof.</p>
+    </div>
+    <div class="grid bento-grid">
+      <article class="card bento-1 reveal">
+        <div class="card-visual visual-sheet" aria-hidden="true">
+          <div class="sheet">
+            <div class="sheet-row sheet-head"><span class="sheet-cell">Module</span><span class="sheet-cell">Owner</span><span class="sheet-cell">Status</span><span class="sheet-cell">SLA</span></div>
+            <div class="sheet-row"><span class="sheet-cell">Customers</span><span class="sheet-cell">CRM</span><span class="sheet-cell up">Live</span><span class="sheet-cell">99.9%</span></div>
+            <div class="sheet-row"><span class="sheet-cell">Orders</span><span class="sheet-cell">ERP</span><span class="sheet-cell up">Live</span><span class="sheet-cell">99.9%</span></div>
+            <div class="sheet-row"><span class="sheet-cell">Vendors</span><span class="sheet-cell">VMS</span><span class="sheet-cell up">Live</span><span class="sheet-cell">99.8%</span></div>
+            <div class="sheet-row"><span class="sheet-cell">Billing</span><span class="sheet-cell">ERP</span><span class="sheet-cell up">Live</span><span class="sheet-cell">99.9%</span></div>
+            <span class="sheet-select"></span>
+            <span class="sheet-cursor"></span>
+          </div>
+        </div>
+        <h3>Enterprise Operations</h3>
+        <p>Custom software for customer, order, partner and billing processes — ERP, CRM and vendor management systems built around how your business actually runs.</p>
+        <a class="card-link" href="#contact">Learn more <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </article>
+      <article class="card bento-2 reveal">
+        <div class="card-visual visual-performance" aria-hidden="true">
+          <svg viewBox="0 0 200 100" preserveAspectRatio="none">
+            <rect class="v-bar" x="6" width="20" y="66" height="26" rx="3"/>
+            <rect class="v-bar" x="34" width="20" y="50" height="42" rx="3"/>
+            <rect class="v-bar" x="62" width="20" y="34" height="58" rx="3"/>
+            <rect class="v-bar v-bar-4" x="90" width="20" y="52" height="40" rx="3"/>
+            <rect class="v-bar" x="118" width="20" y="2" height="90" rx="3"/>
+          </svg>
+          <span class="perf-chip"><span id="perfChip">ATS · mobile · portal</span></span>
+        </div>
+        <h3>Workforce Systems</h3>
+        <p>Recruiting platforms, candidate management, deployment tracking, and time, document and billing workflows — as web, mobile and partner portals.</p>
+        <a class="card-link" href="#contact">Learn more <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </article>
+      <article class="card bento-3 reveal">
+        <div class="card-visual visual-ai-flow" aria-hidden="true">
+          <div class="ai-flow">
+            <div class="ai-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 4h9l3 3v13H6z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg><span>Document</span></div>
+            <svg class="ai-arrow" viewBox="0 0 14 12"><path d="M1.5 6H10M6.5 2l4.5 4-4.5 4"/></svg>
+            <div class="ai-node ai-node-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M9.6 10.4 6.6 7.4M14.4 10.4l3-3M9.6 13.6l-3 3M14.4 13.6l3 3"/></svg><span>Match</span></div>
+            <svg class="ai-arrow" viewBox="0 0 14 12"><path d="M1.5 6H10M6.5 2l4.5 4-4.5 4"/></svg>
+            <div class="ai-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Decide</span></div>
+          </div>
+        </div>
+        <h3>AI-enabled Operations</h3>
+        <p>Applied AI for document intelligence, semantic matching, search and the automation of recurring, rule-heavy decisions.</p>
+        <a class="card-link" href="#contact">Learn more <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </article>
+      <article class="card bento-4 reveal">
+        <div class="card-visual visual-integration" aria-hidden="true">
+          <svg viewBox="0 0 200 110">
+            <rect x="10" y="42" width="52" height="26" rx="6" fill="#e7ecf8" stroke="#c7d2ea"/>
+            <text x="36" y="58" font-size="10" text-anchor="middle" fill="#55606e" font-family="Inter, sans-serif">Legacy</text>
+            <rect x="148" y="14" width="42" height="26" rx="6" fill="#1c4fcc"/>
+            <text x="169" y="30" font-size="10" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif">API</text>
+            <rect x="148" y="70" width="42" height="26" rx="6" fill="#1c4fcc"/>
+            <text x="169" y="86" font-size="10" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif">Data</text>
+            <circle class="v-hub" cx="105" cy="55" r="16" fill="#0b1020"/>
+            <path class="v-link" d="M62 55 H90" stroke="#8fb4ff" stroke-width="2" fill="none"/>
+            <path class="v-link" d="M120 48 L148 27" stroke="#8fb4ff" stroke-width="2" fill="none"/>
+            <path class="v-link" d="M120 62 L148 83" stroke="#8fb4ff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3>Modernization &amp; Integration</h3>
+        <p>Architecture, APIs, migrations and legacy replacement — untangling old systems without stopping the business that runs on them.</p>
+        <a class="card-link" href="#contact">Learn more <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </article>
+      <article class="card bento-5 reveal">
+        <div class="card-visual visual-lifecycle-v2" aria-hidden="true">
+          <svg class="gauge-svg" viewBox="0 0 200 120">
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#0b1020"/>
+                <stop offset="50%" stop-color="#1c4fcc"/>
+                <stop offset="100%" stop-color="#8fb4ff"/>
+              </linearGradient>
+            </defs>
+            <path class="gauge-track" d="M20,100 A80,80 0 0 1 180,100" fill="none" stroke-width="14" stroke-linecap="round"/>
+            <path class="gauge-fill" d="M20,100 A80,80 0 0 1 180,100" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round"/>
+            <g class="gauge-needle"><path d="M100,100 L100,32" stroke="#0b1020" stroke-width="4" stroke-linecap="round"/></g>
+            <circle class="gauge-pivot" cx="100" cy="100" r="8"/>
+          </svg>
+          <div class="cycle-stages">
+            <span>Product</span>
+            <svg class="cycle-arrow" viewBox="0 0 14 12"><path d="M1.5 6H10M6.5 2l4.5 4-4.5 4"/></svg>
+            <span>Engineering</span>
+            <svg class="cycle-arrow" viewBox="0 0 14 12"><path d="M1.5 6H10M6.5 2l4.5 4-4.5 4"/></svg>
+            <span>Quality</span>
+          </div>
+        </div>
+        <h3>Delivery model</h3>
+        <p>Product &amp; consulting, dedicated engineering, and quality gates with risk management — one accountable team, not a chain of subcontractors.</p>
+        <a class="card-link" href="#contact">Learn more <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </article>
+      <article class="card bento-6 reveal">
+        <div class="bento-wide">
+          <div class="bento-wide-copy">
+            <h3>Applied AI services</h3>
+            <p>A focused AI practice inside a larger engineering org: classification, matching and automation, shipped and operated like the rest of your software.</p>
+            <a class="card-link" href="#contact">Learn more <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+          </div>
+          <div class="card-visual visual-attribution" aria-hidden="true">
+            <div class="attr-legend">
+              <span><i style="background:#0b1020"></i>Document classification — 34%</span>
+              <span><i style="background:#1c4fcc"></i>Profile &amp; requirement matching — 40%</span>
+              <span><i style="background:#8fb4ff"></i>Process automation — 26%</span>
+            </div>
+            <div class="attr-bar">
+              <span class="attr-seg" style="width:34%;background:#0b1020"></span>
+              <span class="attr-seg" style="width:40%;background:#1c4fcc"></span>
+              <span class="attr-seg" style="width:26%;background:#8fb4ff"></span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= WORK / PROJECT PROFILES ======= -->
+<section class="section section-dark angled-bg" id="work" data-line="light">
+  <div class="mesh mesh-work" aria-hidden="true"><span class="mesh-dots"></span><span class="mesh-glow"></span></div>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow eyebrow-light">Selected work</span>
+      <h2>Project profiles, not a client logo wall</h2>
+      <p>Client names stay confidential. Here's the real technical substance behind three engagements instead.</p>
+    </div>
+    <div class="case-stack">
+      <article class="case-card case-panel">
+          <span class="case-num-ghost" aria-hidden="true">01</span>
+          <div class="case-panel-grid">
+            <div class="case-panel-info">
+              <div class="case-top">
+                <div class="case-tag">Staffing &amp; workforce · Switzerland</div>
+              </div>
+              <div class="case-stat"><span class="case-stat-value" data-target="4" data-decimals="0">0</span> modules</div>
+              <div class="case-stat-label">unified into one workforce ecosystem</div>
+              <div class="case-deltas">
+                <span class="case-chip">Recruiting</span>
+                <span class="case-chip">Deployment</span>
+                <span class="case-chip">Documents</span>
+                <span class="case-chip">Communication</span>
+              </div>
+              <p class="case-desc">A multilingual candidate and employee platform bringing recruiting, deployment tracking, document management and communication into a single system for a Swiss staffing operation.</p>
+              <a class="card-link link-light" href="#contact">Discuss a similar build <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+            </div>
+            <div class="case-panel-chart">
+              <div class="flow-diagram" aria-hidden="true">
+                <div class="flow-step"><span class="flow-dot"></span>Recruiting</div>
+                <div class="flow-step"><span class="flow-dot"></span>Deployment</div>
+                <div class="flow-step"><span class="flow-dot"></span>Documents</div>
+                <div class="flow-step"><span class="flow-dot"></span>Communication</div>
+              </div>
+              <div class="case-axis"><span>Candidate</span><span>Deployed</span><span>Employee</span></div>
+            </div>
+          </div>
+      </article>
+      <article class="case-card case-panel">
+          <span class="case-num-ghost" aria-hidden="true">02</span>
+          <div class="case-panel-grid">
+            <div class="case-panel-info">
+              <div class="case-top">
+                <div class="case-tag">Recruiting intelligence · DACH</div>
+              </div>
+              <div class="case-stat"><span class="case-stat-value" data-target="3" data-decimals="0">0</span> AI stages</div>
+              <div class="case-stat-label">automated end to end</div>
+              <div class="case-deltas">
+                <span class="case-chip">Parse</span>
+                <span class="case-chip">Structure</span>
+                <span class="case-chip">Match</span>
+              </div>
+              <p class="case-desc">An AI-powered recruiting workflow that parses incoming documents, structures candidate profiles automatically, and matches them against open requirements for DACH recruiting operations.</p>
+              <a class="card-link link-light" href="#contact">Discuss a similar build <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+            </div>
+            <div class="case-panel-chart">
+              <div class="flow-diagram" aria-hidden="true">
+                <div class="flow-step"><span class="flow-dot"></span>Document in</div>
+                <div class="flow-step"><span class="flow-dot"></span>Parse &amp; structure</div>
+                <div class="flow-step"><span class="flow-dot"></span>Match to role</div>
+              </div>
+              <div class="case-axis"><span>Inbox</span><span>Structured profile</span><span>Shortlist</span></div>
+            </div>
+          </div>
+      </article>
+      <article class="case-card case-panel">
+          <span class="case-num-ghost" aria-hidden="true">03</span>
+          <div class="case-panel-grid">
+            <div class="case-panel-info">
+              <div class="case-top">
+                <div class="case-tag">Enterprise operations · B2B</div>
+              </div>
+              <div class="case-stat"><span class="case-stat-value" data-target="4" data-decimals="0">0</span> flows</div>
+              <div class="case-stat-label">on one integrated platform</div>
+              <div class="case-deltas">
+                <span class="case-chip">Customers</span>
+                <span class="case-chip">Suppliers</span>
+                <span class="case-chip">Requests</span>
+                <span class="case-chip">Offers</span>
+              </div>
+              <p class="case-desc">An integrated platform for customer, supplier, request and offer management, replacing a tangle of spreadsheets and point tools with one system for a complex B2B process.</p>
+              <a class="card-link link-light" href="#contact">Discuss a similar build <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+            </div>
+            <div class="case-panel-chart">
+              <div class="flow-diagram" aria-hidden="true">
+                <div class="flow-step"><span class="flow-dot"></span>Request</div>
+                <div class="flow-step"><span class="flow-dot"></span>Offer</div>
+                <div class="flow-step"><span class="flow-dot"></span>Fulfilment</div>
+                <div class="flow-step"><span class="flow-dot"></span>Billing</div>
+              </div>
+              <div class="case-axis"><span>Inbound</span><span>Negotiated</span><span>Closed</span></div>
+            </div>
+          </div>
+      </article>
+      <div class="case-stack-tail" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= QUOTE / OPERATING PRINCIPLE ======= -->
+<section class="section section-quote angled-bg" data-line="dark">
+  <div class="container">
+    <figure class="quote reveal">
+      <blockquote>"Trust develops through clear structures — not through a wall of logos."</blockquote>
+      <figcaption>
+        <span class="quote-avatar" aria-hidden="true">AV</span>
+        <div><strong>Alpview</strong><span>Operating principle — why client names stay confidential</span></div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ======= PROCESS / DELIVERY MODEL ======= -->
+<section class="section" id="process" data-line="dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How we work</span>
+      <h2>From audit to accountable delivery</h2>
+      <p>Product &amp; consulting, dedicated engineering, and quality gates with risk management — a tight operating rhythm with no black boxes.</p>
+    </div>
+    <div class="grid process-grid">
+      <article class="card process-card reveal">
+        <div class="card-visual visual-process-audit" aria-hidden="true">
+          <div class="pv-head"><span>Audit scorecard</span><span class="pv-chip">Week 1–2</span></div>
+          <ul class="pv-checklist">
+            <li class="pv-base"><span class="pc-dot"></span>Process &amp; systems mapped</li>
+            <li class="pv-base"><span class="pc-dot"></span>Data &amp; integration review</li>
+            <li class="pv-base"><span class="pc-dot pc-leak"></span>Legacy risk identified</li>
+            <li class="pv-extra"><span class="pc-dot"></span>AI opportunity scan</li>
+          </ul>
+          <div class="pv-foot pv-extra"><span class="pv-metric">3 risks found</span><span class="pv-metric pv-metric-alt">Scope sized</span></div>
+        </div>
+        <h3>Discover</h3>
+        <p>A focused audit of your processes, data and systems. We find the risks and size the opportunity before writing a line of code.</p>
+      </article>
+      <article class="card process-card reveal">
+        <div class="card-visual visual-process-roadmap" aria-hidden="true">
+          <div class="pv-head"><span>Architecture roadmap</span><span class="pv-chip">Week 3–4</span></div>
+          <div class="pv-roadmap">
+            <div class="pr-row pv-base"><span class="pr-label">Core platform</span><span class="pr-track"><span class="pr-fill" style="--w0:32%; --w:82%"></span></span><span class="pr-tag">M1–M2</span></div>
+            <div class="pr-row pv-base"><span class="pr-label">Integrations</span><span class="pr-track"><span class="pr-fill" style="--w0:22%; --w:54%"></span></span><span class="pr-tag">M2</span></div>
+            <div class="pr-row pv-base"><span class="pr-label">AI layer</span><span class="pr-track"><span class="pr-fill" style="--w0:18%; --w:68%"></span></span><span class="pr-tag">M3</span></div>
+          </div>
+          <div class="pv-foot pv-extra"><span class="pv-metric">Scope signed off</span><span class="pv-metric pv-metric-alt">Fixed milestones</span></div>
+        </div>
+        <h3>Design</h3>
+        <p>An architecture and delivery roadmap with clear milestones and ownership — signed off by your leadership before build starts.</p>
+      </article>
+      <article class="card process-card reveal">
+        <div class="card-visual visual-process-kanban" aria-hidden="true">
+          <div class="pv-head"><span>Sprint board</span><span class="pv-chip">Week 5+</span></div>
+          <div class="pv-kanban">
+            <div class="pk-col"><span class="pk-head">Backlog</span><span class="pk-card pv-base">Vendor API</span></div>
+            <div class="pk-col"><span class="pk-head">In progress</span><span class="pk-card pk-active pv-base">Matching engine</span><span class="pk-card pk-active pv-extra">Portal v3</span></div>
+            <div class="pk-col"><span class="pk-head">Shipped</span><span class="pk-card pk-done pv-base">Billing module</span><span class="pk-card pk-done pv-extra">SSO migration</span></div>
+          </div>
+          <div class="pv-foot pv-extra"><span class="pv-metric">6 shipped this sprint</span><span class="pv-metric pv-metric-alt">Weekly demos</span></div>
+        </div>
+        <h3>Build</h3>
+        <p>Tech leads plus frontend, backend and mobile engineers ship in weekly sprints, demoed against your real workflows.</p>
+      </article>
+      <article class="card process-card reveal">
+        <div class="card-visual visual-process-dash" aria-hidden="true">
+          <div class="pv-head"><span>Quality gate</span><span class="pv-chip">Ongoing</span></div>
+          <div class="pv-dash-row">
+            <div class="pv-dash-cell pv-base"><span>Uptime</span><strong>99.9%</strong></div>
+            <div class="pv-dash-cell pv-base"><span>Test cov.</span><strong>87%</strong></div>
+            <div class="pv-dash-cell pv-base"><span>Risk log</span><strong>0 open</strong></div>
+          </div>
+          <svg class="pv-spark" viewBox="0 0 260 46" preserveAspectRatio="none"><polyline points="0,38 30,34 60,36 90,26 120,22 150,14 180,16 210,7 240,4 260,1"/></svg>
+          <div class="pv-foot pv-extra"><span class="pv-metric">Risk-managed releases</span><span class="pv-metric pv-metric-alt">Shared reporting</span></div>
+        </div>
+        <h3>Assure</h3>
+        <p>Quality gates and risk management run alongside delivery — issues surface early, and reporting stays transparent and shared.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ENGAGEMENT MODELS ======= -->
+<section class="section" id="engagement" data-line="dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Engagement</span>
+      <h2>Engagement models that fit the scope</h2>
+      <p>No off-the-shelf packages. Every engagement is scoped with you before we agree on a model.</p>
+    </div>
+    <div class="grid grid-3 pricing-grid">
+      <article class="price-card reveal">
+        <h3>Sprint</h3>
+        <p class="price-desc">A scoped discovery or audit engagement to size one problem well.</p>
+        <div class="price"><span class="price-num">Scoped</span></div>
+        <ul class="price-list">
+          <li>Process &amp; systems audit</li>
+          <li>Architecture recommendation</li>
+          <li>Fixed timeline &amp; deliverable</li>
+          <li>Handoff-ready documentation</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-block">Book a sprint</a>
+      </article>
+      <article class="price-card price-featured reveal">
+        <span class="price-badge">Most common</span>
+        <h3>Embedded team</h3>
+        <p class="price-desc">A dedicated squad — tech lead plus engineers — embedded in your delivery.</p>
+        <div class="price"><span class="price-num">Dedicated</span></div>
+        <ul class="price-list">
+          <li>Tech lead + frontend/backend/mobile</li>
+          <li>Weekly sprints &amp; demos</li>
+          <li>Quality gates built in</li>
+          <li>Direct access to the engineers</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block btn-gradient">Start a project</a>
+      </article>
+      <article class="price-card reveal">
+        <h3>Enterprise program</h3>
+        <p class="price-desc">Multi-workstream delivery across product, engineering and AI.</p>
+        <div class="price"><span class="price-num">Custom</span></div>
+        <ul class="price-list">
+          <li>Everything in Embedded team</li>
+          <li>Multiple parallel workstreams</li>
+          <li>Modernization &amp; migration planning</li>
+          <li>SLA-backed delivery</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-block">Talk to us</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= COMPANY / TEAM ======= -->
+<section class="section section-alt" id="team" data-line="dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Company</span>
+      <h2>Operators, not account managers</h2>
+      <p>A German leadership team handles product strategy and market proximity. Remote-first engineers focus on long-term individual projects — not staff augmentation.</p>
+    </div>
+    <div class="team-carousel">
+      <div class="team-track" id="teamTrack">
+        <article class="team-card">
+          <div class="team-photo team-photo-fallback">
+            <svg class="team-photo-fallback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <div class="team-info">
+            <div class="team-info-text"><h3>Leadership</h3><p>Berlin · product strategy</p></div>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-photo team-photo-fallback">
+            <svg class="team-photo-fallback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <div class="team-info">
+            <div class="team-info-text"><h3>Engineering</h3><p>Remote-first · tech leads &amp; devs</p></div>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-photo team-photo-fallback">
+            <svg class="team-photo-fallback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+          </div>
+          <div class="team-info">
+            <div class="team-info-text"><h3>Applied AI</h3><p>Document intelligence &amp; matching</p></div>
+          </div>
+        </article>
+        <article class="team-card">
+          <div class="team-photo team-photo-more">
+            <svg class="team-photo-fallback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="team-info">
+            <div class="team-info-text"><h3>We're hiring</h3><p>Join the engineering team</p></div>
+          </div>
+      </article>
+    </div>
+    <div class="team-controls">
+      <button class="team-nav-btn" id="teamPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="team-nav-btn" id="teamNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CTA / CONTACT ======= -->
+<section class="section section-cta angled-bg" id="contact" data-line="light">
+  <div class="mesh mesh-cta" aria-hidden="true"><span class="mesh-dots"></span><span class="mesh-glow"></span></div>
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <h2>Have a process that<br>doesn't fit a standard tool?</h2>
+      <p>Tell us where you are and what's breaking. We'll come back with an honest read on scope — even if the answer is "you don't need custom software for this."</p>
+      <ul class="cta-points">
+        <li>Free scoping call</li>
+        <li>DACH-based, remote-first team</li>
+        <li class="cta-point-final">End-to-end ownership, no subcontractor chain</li>
+      </ul>
+      <div class="cta-address">
+        <strong>Alpview IT Service UG (haftungsbeschränkt)</strong>
+        <span>Kolonnenstraße 8, 10827 Berlin, Germany</span>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <label>Name<input type="text" name="name" placeholder="Jane Doe" required></label>
+        <label>Work email<input type="email" name="email" placeholder="jane@company.com" required></label>
+      </div>
+      <label>Company<input type="text" name="company" placeholder="Company GmbH"></label>
+      <label>What are you building?
+        <select name="topic">
+          <option>Enterprise Operations (ERP / CRM / VMS)</option>
+          <option>Workforce Systems</option>
+          <option>AI-enabled Operations</option>
+          <option>Modernization &amp; Integration</option>
+        </select>
+      </label>
+      <div class="compose">
+        <div class="compose-bar">
+          <span class="compose-title">New message</span>
+        </div>
+        <div class="compose-meta">
+          <span class="compose-meta-row"><span class="compose-meta-label">To</span><span class="compose-meta-value">info@alpview-itservice.de</span></span>
+          <span class="compose-meta-row"><span class="compose-meta-label">Subject</span><span class="compose-meta-value">What are you trying to build?</span></span>
+        </div>
+        <textarea name="message" rows="4" placeholder="Describe the process or system…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Send message <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></button>
+      <p class="form-success" id="formSuccess" hidden>Thanks! We'll be in touch within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer" data-line="dark">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" aria-label="Alpview home">
+        <img class="logo-mark" src="assets/logo-placeholder.svg" alt="" aria-hidden="true">
+      </a>
+      <p>Enterprise software engineering &amp; applied AI for the DACH region.</p>
+    </div>
+    <nav class="footer-col"><h4>Solutions</h4><a href="#services">Enterprise Operations</a><a href="#services">Workforce Systems</a><a href="#services">AI-enabled Operations</a><a href="#services">Modernization</a></nav>
+    <nav class="footer-col"><h4>Company</h4><a href="#work">Projects</a><a href="#process">Delivery</a><a href="#engagement">Engagement</a><a href="#team">Team</a></nav>
+    <nav class="footer-col footer-col-connect"><h4>Connect</h4>
+      <a href="mailto:info@alpview-itservice.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>info@alpview-itservice.de</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Alpview IT Service UG (haftungsbeschränkt). All rights reserved.</span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+  </div>
+  <div class="footer-mega-wrap"><span class="footer-mega reveal" id="footerMega">ALPVIEW</span></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
