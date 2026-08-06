@@ -4,8 +4,10 @@ A redesign of [alpview-itservice.de](https://alpview-itservice.de/) in the visua
 style of [Mellom](https://github.com/yeh0rich/mellom): a Stripe-inspired
 single-page layout — gradient hero, bento-grid services, sticky-stacked case
 panels, hover-revealing process cards, and a full-width footer wordmark —
-recolored to a navy/blue palette and rewritten with Alpview's real content
-(services, project profiles, delivery model, contact details).
+rewritten with Alpview's real content (services, project profiles, delivery
+model, contact details) and using Alpview's own brand: their logo and the
+navy/blue/cyan/warm-cream palette and Geist typeface pulled from
+alpview-itservice.de itself.
 
 Static HTML/CSS/JS, no build step, no framework.
 
@@ -28,12 +30,11 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-## Adding the real logo
+## Logo
 
-Replace `assets/logo-placeholder.svg` with the real Alpview logo (keep the
-filename, or update the two `<img src="assets/logo-placeholder.svg">`
-references in `index.html` if you rename it). Update `assets/favicon.svg`
-too if you want the browser tab icon to match.
+`assets/alpview-logo.svg` is the real logo. `assets/favicon.svg` is a
+derived favicon (the same mark on a rounded square) — regenerate it if the
+logo changes.
 
 ## Environment variables / API keys
 
@@ -50,14 +51,30 @@ analytics, etc.), there's already a safe place for secrets:
 
 ## What's a placeholder right now
 
-- **Logo** — `assets/logo-placeholder.svg` is a temporary mark; swap it for
-  the real logo.
 - **Contact form** — `js/main.js` has a demo submit handler (shows a success
   message, doesn't send anywhere). Wire it to a real form backend using the
   `.env` values above before launch.
 - **Team section** — role-based placeholder cards (Leadership / Engineering
   / Applied AI), since no real team bios/photos were provided. Swap in real
   people whenever you're ready.
-- **Colors** — `css/style.css` `:root` defines `--brand`, `--brand-dark`,
-  `--brand-light`, `--ink`; adjust these once the final logo/brand palette is
-  set.
+
+## Colors
+
+`css/style.css` `:root` defines the palette, pulled from
+alpview-itservice.de's own CSS custom properties:
+
+| Token | Hex | Role |
+|---|---|---|
+| `--brand` | `#245cff` | Primary blue accent |
+| `--brand-dark` | `#1a45c8` | Accent hover/darker |
+| `--brand-light` | `#89aafc` | Light blue tint |
+| `--cyan` | `#31cbc6` | Secondary accent / success |
+| `--ink` | `#06172b` | Navy — dark bg & primary text |
+| `--ink-soft` | `#53647a` | Secondary text (slate) |
+| `--slate` | `#f4f2ed` | Warm cream — light section bg |
+| `--white` | `#f8fafc` | Off-white surface |
+| `--border` | `#dbe2ea` | Hairlines |
+| `--warn` | `#c17f2e` | Semantic warning only (not brand) |
+
+Typeface is [Geist](https://vercel.com/font) (Alpview's real font), falling
+back to the system sans-serif stack.
