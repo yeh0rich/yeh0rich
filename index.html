@@ -74,9 +74,9 @@
       <div class="dash-card dash-main">
         <div class="dash-header"><span class="dash-title">Delivery overview</span></div>
         <div class="dash-metric">
-          <span class="dash-label">Active engineering capacity</span>
-          <span class="dash-value" id="dashValue" data-target="32">0</span>
-          <span class="dash-delta">↑ 4 specialists added this quarter</span>
+          <span class="dash-label">Active projects in delivery</span>
+          <span class="dash-value" id="dashValue" data-target="18">0</span>
+          <span class="dash-delta">↑ 3 new engagements this quarter</span>
         </div>
         <div class="dash-chart-wrap">
           <svg class="dash-chart" id="dashChart" viewBox="0 0 320 110" preserveAspectRatio="none">
@@ -93,9 +93,9 @@
           <div class="chart-tip" id="chartTip" hidden></div>
         </div>
         <div class="dash-row">
+          <div class="dash-cell"><span class="dash-cell-label">Specialists</span><span class="dash-cell-value">32</span></div>
           <div class="dash-cell"><span class="dash-cell-label">Uptime</span><span class="dash-cell-value">99.9%</span></div>
           <div class="dash-cell"><span class="dash-cell-label">Response</span><span class="dash-cell-value">&lt;4h</span></div>
-          <div class="dash-cell"><span class="dash-cell-label">Projects</span><span class="dash-cell-value">18</span></div>
         </div>
       </div>
       <div class="dash-card dash-float dash-float-bottom">
@@ -144,15 +144,26 @@
         <div class="tag-row"><span class="tag">ATS</span><span class="tag">Mobile</span><span class="tag">Portals</span></div>
       </article>
       <article class="card reveal">
-        <div class="card-visual visual-ai" aria-hidden="true">
-          <div class="ai-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-            <span id="aiTyped">vendor_contract_q3.pdf</span><span class="ai-caret"></span>
+        <div class="card-visual visual-connect" aria-hidden="true">
+          <svg class="connect-lines" viewBox="0 0 200 130" preserveAspectRatio="none">
+            <path class="connect-path" d="M50,65 C95,65 110,26 156,26"/>
+            <path class="connect-path" d="M50,65 L156,65"/>
+            <path class="connect-path" d="M50,65 C95,65 110,104 156,104"/>
+            <circle class="connect-dot" r="3.5"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite" path="M50,65 C95,65 110,26 156,26"/></circle>
+            <circle class="connect-dot" r="3.5"><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite" path="M50,65 L156,65"/></circle>
+            <circle class="connect-dot" r="3.5"><animateMotion dur="2.6s" begin="1.8s" repeatCount="indefinite" path="M50,65 C95,65 110,104 156,104"/></circle>
+          </svg>
+          <div class="connect-hub" style="left:25%;top:50%">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
           </div>
-          <div class="ai-tags-mini">
-            <div class="ai-tag-mini"><span>Contract</span><div class="ai-tag-bar"><span style="--fill:92%"></span></div></div>
-            <div class="ai-tag-mini"><span>Vendor mgmt</span><div class="ai-tag-bar"><span style="--fill:78%"></span></div></div>
-            <div class="ai-tag-mini"><span>Approval</span><div class="ai-tag-bar"><span style="--fill:65%"></span></div></div>
+          <div class="connect-node icon-blue" style="left:78%;top:20%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+          </div>
+          <div class="connect-node icon-cyan" style="left:78%;top:50%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5 20 20"/></svg>
+          </div>
+          <div class="connect-node icon-blue" style="left:78%;top:80%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3"/><path d="M18 3v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3"/><path d="M6 21v-5h5"/></svg>
           </div>
         </div>
         <h3>AI-enabled Operations</h3>
@@ -160,15 +171,24 @@
         <div class="tag-row"><span class="tag">AI</span><span class="tag">Search</span><span class="tag">Automation</span></div>
       </article>
       <article class="card card-wide reveal">
-        <div class="card-visual visual-gauge" aria-hidden="true">
-          <span class="kpi-chip"><span>68% modernized</span></span>
-          <svg class="gauge-svg" viewBox="0 0 140 84">
-            <path class="gauge-track" d="M14,70 A56,56 0 0 1 126,70" fill="none" stroke-width="10" stroke-linecap="round"/>
-            <path class="gauge-fill" d="M14,70 A56,56 0 0 1 126,70" fill="none" stroke-width="10" stroke-linecap="round"/>
-            <g class="gauge-needle"><path d="M70,70 L70,24" stroke-width="3" stroke-linecap="round"/></g>
-            <circle class="gauge-pivot" cx="70" cy="70" r="6"/>
+        <div class="card-visual visual-connect" aria-hidden="true">
+          <svg class="connect-lines" viewBox="0 0 320 160" preserveAspectRatio="none">
+            <path class="connect-path" d="M48,80 Q104,20 160,80"/>
+            <path class="connect-path" d="M160,80 Q216,140 272,80"/>
+            <circle class="connect-dot" r="4"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" path="M48,80 Q104,20 160,80"/></circle>
+            <circle class="connect-dot" r="4"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M160,80 Q216,140 272,80"/></circle>
           </svg>
-          <div class="gauge-stages"><span>Legacy</span><svg viewBox="0 0 14 12"><path d="M1.5 6H10M6.5 2l4.5 4-4.5 4"/></svg><span>Modern</span></div>
+          <div class="connect-node connect-node-lg icon-blue" style="left:15%;top:50%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+            <span class="connect-label">Legacy</span>
+          </div>
+          <div class="connect-hub" style="left:50%;top:50%">
+            <img src="assets/alpview-logo-inverse.svg" alt="" aria-hidden="true">
+          </div>
+          <div class="connect-node connect-node-lg icon-cyan" style="left:85%;top:50%">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 19a4.5 4.5 0 0 1-.5-8.98A5.5 5.5 0 0 1 16.9 8.02 4 4 0 0 1 17.5 16H7z"/></svg>
+            <span class="connect-label">Modern</span>
+          </div>
         </div>
         <h3>Modernization &amp; Integration</h3>
         <p>Architecture, APIs, migration and the controlled replacement of business-critical legacy systems.</p>

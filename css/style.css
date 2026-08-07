@@ -120,7 +120,7 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 
 /* ---------- Hero ---------- */
 .hero { position: relative; padding: 168px 0 100px; background: var(--white); overflow: hidden; }
-.hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+.hero-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: start; }
 @media (max-width: 980px) { .hero-inner { grid-template-columns: 1fr; } }
 .hero h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.14; letter-spacing: -0.02em; font-weight: 600; color: var(--ink); text-wrap: balance; }
 .hero h1 .highlight { color: var(--brand-light); }
@@ -196,18 +196,18 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .sheet-head .sheet-cell { color: #fff; font-weight: 700; border-right-color: rgba(255,255,255,.16); }
 .sheet-cell.status-ok { color: var(--brand); font-weight: 700; }
 .sheet-cursor {
-  position: absolute; width: 8px; height: 8px; top: 37.5%; left: 32%;
+  position: absolute; width: 8px; height: 8px; top: 25%; left: 34.286%;
   background: var(--brand); border: 1.5px solid #fff; outline: 1px solid var(--brand); border-radius: 1px;
   margin: -4px; z-index: 2;
   transition: top .45s cubic-bezier(.25,.8,.4,1), left .45s cubic-bezier(.25,.8,.4,1);
 }
-.card:hover .sheet-cursor { top: 87.5%; left: 84%; }
+.card:hover .sheet-cursor { top: 100%; left: 100%; }
 .sheet-select {
-  position: absolute; top: 12.5%; left: 32%; width: 0; height: 0; opacity: 0;
+  position: absolute; top: 25%; left: 34.286%; width: 0; height: 0; opacity: 0;
   border: 2px solid var(--brand); background: rgba(46,80,252,.08); pointer-events: none;
   transition: width .45s cubic-bezier(.25,.8,.4,1), height .45s cubic-bezier(.25,.8,.4,1), opacity .3s ease;
 }
-.card:hover .sheet-select { width: 50%; height: 62%; opacity: 1; }
+.card:hover .sheet-select { width: 65.714%; height: 75%; opacity: 1; }
 
 /* Workforce Systems — placement bar chart with a floating KPI chip that cycles */
 .visual-pipeline { position: relative; height: 148px; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 34px 16px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
@@ -221,33 +221,37 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .kpi-chip span { display: inline-block; transition: opacity .2s ease, transform .2s ease; }
 .kpi-chip span.swap { opacity: 0; transform: translateY(3px); }
 
-/* AI-enabled Operations — typed document name + classification confidence bars */
-.visual-ai { display: flex; flex-direction: column; gap: 10px; height: 148px; justify-content: center; border: 1px solid var(--border); border-radius: 8px; background: #fff; padding: 16px; }
-.ai-search { display: flex; align-items: center; gap: 7px; background: var(--ice); border: 1px solid var(--border); border-radius: 999px; padding: 7px 12px; font-size: 12px; color: var(--ink-soft); min-width: 0; }
-.ai-search svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--ink-soft); }
-.ai-search { width: 100%; }
-#aiTyped { display: inline-block; white-space: nowrap; overflow: hidden; }
-.ai-caret { width: 1px; height: 12px; background: var(--ink-soft); display: inline-block; animation: caretBlink 1s step-end infinite; }
-@keyframes caretBlink { 50% { opacity: 0; } }
-.ai-tags-mini { display: flex; flex-direction: column; gap: 7px; }
-.ai-tag-mini { display: grid; grid-template-columns: 84px 1fr; align-items: center; gap: 10px; font-size: 11px; color: var(--ink-soft); }
-.ai-tag-bar { height: 5px; border-radius: 999px; background: var(--border); overflow: hidden; }
-.ai-tag-bar span { display: block; height: 100%; background: var(--brand); border-radius: 999px; width: 0; transition: width .6s ease .1s; }
-.card:hover .ai-tag-bar span { width: var(--fill, 80%); }
-
-/* Modernization & Integration — migration gauge, needle sweeps to "Modern" on hover */
-.visual-gauge { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 148px; justify-content: center; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
-.card-wide .visual-gauge { height: 190px; }
-.gauge-svg { width: 100%; max-width: 300px; overflow: visible; }
-.gauge-track { stroke: var(--border); }
-.gauge-fill { stroke: var(--brand); opacity: .9; }
-.gauge-needle path { stroke: var(--ink); }
-.gauge-pivot { fill: var(--ink); }
-.gauge-needle { transform-box: view-box; transform-origin: 70px 70px; transform: rotate(-18deg); transition: transform .7s cubic-bezier(.34,1.56,.64,1); }
-.card:hover .gauge-needle { transform: rotate(82deg); }
-@media (prefers-reduced-motion: reduce) { .gauge-needle, .pipeline-bar span, .sheet-cursor, .sheet-select, .ai-tag-bar span { transition: none; } }
-.gauge-stages { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; color: var(--ink-soft); }
-.gauge-stages svg { width: 12px; height: 10px; stroke: var(--brand); stroke-width: 1.6; fill: none; flex-shrink: 0; }
+/* Stripe-style connector diagrams — thin curved "noodle" paths with a
+   traveling dot, linking node badges. Shared by the AI and Modernization
+   service visuals below. */
+.visual-connect { position: relative; height: 148px; border: 1px solid var(--border); border-radius: 8px; background: #fff; overflow: hidden; }
+.card-wide .visual-connect { height: 190px; }
+.connect-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.connect-path { fill: none; stroke: var(--border); stroke-width: 2; }
+.connect-dot { fill: var(--brand); }
+.connect-node {
+  position: absolute; transform: translate(-50%,-50%);
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  transition: transform .25s cubic-bezier(.25,.8,.4,1), border-color .25s ease;
+}
+.connect-node svg { width: 16px; height: 16px; }
+.card:hover .connect-node { transform: translate(-50%,-50%) scale(1.12); border-color: var(--brand); }
+.connect-node-lg { width: 44px; height: 44px; }
+.connect-node-lg svg { width: 20px; height: 20px; }
+.connect-hub {
+  position: absolute; transform: translate(-50%,-50%);
+  width: 48px; height: 48px; border-radius: 50%; background: var(--brand);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 20px -6px rgba(46,80,252,.5);
+  transition: transform .25s cubic-bezier(.25,.8,.4,1);
+}
+.card:hover .connect-hub { transform: translate(-50%,-50%) scale(1.06); }
+.connect-hub img { width: 22px; height: 22px; }
+.connect-hub svg { width: 20px; height: 20px; }
+.connect-label { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 8px; font-size: 11px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .connect-dot, .connect-dot animateMotion { display: none; } .pipeline-bar span, .sheet-cursor, .sheet-select { transition: none; } }
 
 /* ---------- Industry / hub diagram ---------- */
 .industry-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }

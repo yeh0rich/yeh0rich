@@ -33,28 +33,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// AI-enabled Operations card: typing effect cycling through document names
-(() => {
-  const el = document.getElementById('aiTyped');
-  if (!el) return;
-  const names = ['vendor_contract_q3.pdf', 'invoice_4471.pdf', 'candidate_profile_keller.pdf', 'purchase_order_8825.pdf'];
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) return;
-  let n = 0, i = names[0].length, deleting = false;
-  const tick = () => {
-    const word = names[n];
-    el.textContent = word.slice(0, i);
-    if (!deleting) {
-      if (i < word.length) { i++; setTimeout(tick, 45); }
-      else { deleting = true; setTimeout(tick, 1800); }
-    } else {
-      if (i > 0) { i--; setTimeout(tick, 30); }
-      else { deleting = false; n = (n + 1) % names.length; setTimeout(tick, 150); }
-    }
-  };
-  setTimeout(tick, 1800);
-})();
-
 // Workforce Systems card: swap the KPI chip through a few metrics
 (() => {
   const el = document.getElementById('kpiChip');
@@ -102,8 +80,8 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       cursor.setAttribute('x1', x); cursor.setAttribute('x2', x);
       cursor.setAttribute('visibility', 'visible');
       const q = quarters[Math.min(quarters.length - 1, Math.floor(fx * quarters.length))];
-      const capacity = Math.round(18 + fx * 14);
-      tip.textContent = `${q} · ${capacity} specialists`;
+      const projects = Math.round(9 + fx * 9);
+      tip.textContent = `${q} · ${projects} active projects`;
       tip.hidden = false;
       tip.style.left = (fx * r.width) + 'px';
       tip.style.top = (92 - fx * 70) / 110 * r.height + 'px';
