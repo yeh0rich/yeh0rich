@@ -1,10 +1,18 @@
 /* ALPVIEW — interactions */
 
-// Header: solid background once the page scrolls
+// Header hover bar (header stays at the top of the page, not sticky)
 const header = document.getElementById('siteHeader');
-const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+header.addEventListener('mouseenter', () => header.classList.add('bar-active'));
+header.addEventListener('mouseleave', () => header.classList.remove('bar-active'));
+
+// Side quick-nav tab: only show once the header scrolls out of view
+const sideTab = document.getElementById('sideTab');
+if (sideTab) {
+  const headerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => sideTab.classList.toggle('visible', !e.isIntersecting));
+  });
+  headerObserver.observe(header);
+}
 
 // Mobile menu
 const burger = document.getElementById('navBurger');
