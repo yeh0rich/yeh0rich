@@ -15,7 +15,6 @@
   --border: #dbe2ea;
   --radius: 10px;
   --font: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -111,13 +110,6 @@ ul, ol { list-style: none; }
 .section { padding: 108px 0; }
 .section-tint { background: var(--cream); }
 .section-light { background: var(--white); }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  color: var(--brand); font-family: var(--font-mono); font-weight: 700; font-size: 12px;
-  letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px;
-}
-.eyebrow::after { content: ""; width: 0; height: 1px; background: currentColor; opacity: .55; transition: width .8s cubic-bezier(.2,.7,.2,1) .15s; }
-.reveal.visible .eyebrow::after { width: 40px; }
 h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.015em; font-weight: 600; text-wrap: balance; }
 .lede { color: var(--ink-soft); font-size: 16.5px; line-height: 1.6; max-width: 640px; }
 .section-heading { max-width: 700px; margin-bottom: 56px; }
@@ -135,7 +127,8 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .hero-sub { margin: 22px 0 34px; font-size: 17.5px; line-height: 1.6; color: var(--ink-soft); max-width: 620px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
 .hero-stats { display: flex; gap: 44px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--border); }
-.hero-stat-value { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+.hero-stat-value { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; transition: color .2s ease; }
+.hero-stat:hover .hero-stat-value { color: var(--cyan); }
 .hero-stat-label { font-size: 13.5px; color: var(--muted); margin-top: 3px; max-width: 170px; }
 
 /* ---------- Cards (shared) ---------- */
@@ -155,8 +148,9 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .tag { font-size: 12px; font-weight: 600; color: var(--ink-soft); background: var(--ice); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; }
 
 /* ---------- Solutions grid ---------- */
-.solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-@media (max-width: 700px) { .solutions-grid { grid-template-columns: 1fr; } }
+.solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.solutions-grid .card-wide { grid-column: span 2; }
+@media (max-width: 900px) { .solutions-grid { grid-template-columns: 1fr; } .solutions-grid .card-wide { grid-column: span 1; } }
 
 /* ---------- Solutions grid: interactive service visuals ---------- */
 .card-visual { margin-bottom: 20px; }
@@ -209,7 +203,8 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 
 /* Modernization & Integration — migration gauge, needle sweeps to "Modern" on hover */
 .visual-gauge { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 148px; justify-content: center; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
-.gauge-svg { width: 220px; overflow: visible; }
+.card-wide .visual-gauge { height: 190px; }
+.gauge-svg { width: 100%; max-width: 300px; overflow: visible; }
 .gauge-track { stroke: var(--border); }
 .gauge-fill { stroke: var(--brand); opacity: .9; }
 .gauge-needle path { stroke: var(--ink); }
@@ -257,9 +252,11 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 
 /* ---------- Delivery: route stepper ---------- */
 .route-stepper { display: flex; align-items: center; gap: 0; margin-bottom: 56px; max-width: 640px; }
-.route-step { display: flex; align-items: center; gap: 12px; }
-.route-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brand); flex-shrink: 0; box-shadow: 0 0 0 4px rgba(36,92,255,.16); }
-.route-step span { font-size: 14.5px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.route-step { display: flex; align-items: center; gap: 12px; cursor: default; }
+.route-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brand); flex-shrink: 0; box-shadow: 0 0 0 4px rgba(36,92,255,.16); transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+.route-step:hover .route-dot { transform: scale(1.35); box-shadow: 0 0 0 6px rgba(36,92,255,.22); }
+.route-step span { font-size: 14.5px; font-weight: 600; color: var(--ink); white-space: nowrap; transition: color .2s ease; }
+.route-step:hover span { color: var(--brand); }
 .route-line { flex: 1; height: 1px; background: var(--border); margin: 0 16px; min-width: 24px; }
 @media (max-width: 700px) {
   .route-stepper { flex-wrap: wrap; gap: 16px 0; }
@@ -299,7 +296,8 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .proof-quote h2 { font-size: clamp(24px, 2.8vw, 34px); font-weight: 500; line-height: 1.35; }
 .proof-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--border); padding-top: 32px; }
 .proof-stats .stat + .stat { border-left: 1px solid var(--border); padding-left: 28px; }
-.stat-value { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.stat-value { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; transition: color .2s ease; }
+.stat:hover .stat-value { color: var(--cyan); }
 .stat-label { font-size: 13.5px; color: var(--muted); margin-top: 6px; max-width: 180px; }
 @media (max-width: 800px) { .proof-stats { grid-template-columns: repeat(2, 1fr); row-gap: 28px; } .proof-stats .stat:nth-child(3) { border-left: none; padding-left: 0; } }
 @media (max-width: 480px) { .proof-stats { grid-template-columns: 1fr; } .proof-stats .stat { border-left: none !important; padding-left: 0 !important; } }
@@ -316,8 +314,11 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
   display: flex; align-items: center; padding: 0 24px;
 }
 .work-visual svg { width: 100%; height: 44px; overflow: visible; }
-.work-visual svg path { stroke: rgba(255,255,255,.85); }
-.work-visual svg circle { fill: #fff; }
+.work-visual svg path { stroke: rgba(255,255,255,.85); stroke-dasharray: 300; stroke-dashoffset: 300; transition: stroke-dashoffset .8s cubic-bezier(.25,.8,.4,1); }
+.work-card:hover .work-visual svg path { stroke-dashoffset: 0; }
+.work-visual svg circle { fill: #fff; opacity: 0; transition: opacity .3s ease .5s; }
+.work-card:hover .work-visual svg circle { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .work-visual svg path, .work-visual svg circle { transition: none; stroke-dashoffset: 0; opacity: 1; } }
 .work-content { padding: 24px; display: flex; flex-direction: column; flex: 1; }
 .work-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
 .work-content h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
@@ -330,7 +331,6 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 /* ---------- Gateway (Company / Engineering) ---------- */
 .gateway-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
 @media (max-width: 800px) { .gateway-grid { grid-template-columns: 1fr; gap: 40px; } }
-.gateway-card p.eyebrow { margin-bottom: 16px; }
 .gateway-card h2 { margin-bottom: 16px; }
 .gateway-card p.lede { margin-bottom: 26px; }
 
