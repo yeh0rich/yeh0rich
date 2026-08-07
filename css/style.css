@@ -70,6 +70,7 @@ ul, ol { list-style: none; }
 .logo-word { font-family: 'Quicksand', var(--font); font-weight: 700; font-size: 19px; letter-spacing: .01em; text-transform: lowercase; color: var(--ink); }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { font-weight: 500; font-size: 15px; color: var(--ink); transition: color .2s ease; }
+.nav-links:hover a { color: var(--muted); }
 .nav-links a:hover { color: var(--brand); }
 .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-burger span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
@@ -83,14 +84,14 @@ ul, ol { list-style: none; }
   position: fixed; bottom: 40px; right: 0; z-index: 90;
   display: flex; align-items: center;
   background: #fff; border: 1px solid var(--border); border-right: none;
-  border-radius: 16px 0 0 16px; box-shadow: 0 8px 28px rgba(6,23,43,.1);
-  padding: 8px;
+  border-radius: 18px 0 0 18px; box-shadow: 0 8px 28px rgba(6,23,43,.1);
+  padding: 14px 24px 14px 18px;
   transform: translateX(100%); opacity: 0; pointer-events: none;
   transition: transform .35s cubic-bezier(.25,.8,.4,1), opacity .3s ease;
 }
 .side-tab.visible { transform: translateX(0); opacity: 1; pointer-events: auto; }
 .side-tab-logo { flex-shrink: 0; display: flex; position: relative; z-index: 1; }
-.side-tab-logo .logo-mark { width: 30px; height: 30px; }
+.side-tab-logo .logo-mark { width: 34px; height: 34px; }
 .side-tab-links {
   display: flex; align-items: center; gap: 22px; white-space: nowrap;
   max-width: 0; opacity: 0; overflow: hidden; padding-left: 0;
@@ -179,10 +180,13 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .card:hover .sheet-select { width: 50%; height: 62%; opacity: 1; }
 
 /* Workforce Systems — placement bar chart with a floating KPI chip that cycles */
-.visual-bars { position: relative; height: 148px; display: flex; align-items: flex-end; gap: 8px; padding: 10px 8px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
-.bar-col { flex: 1; background: var(--ice); border-radius: 3px 3px 0 0; transition: transform .5s cubic-bezier(.25,.8,.4,1), background .5s ease; transform-box: fill-box; transform-origin: bottom; }
-.bar-col.bar-hi { background: var(--brand); }
-.card:hover .bar-col.bar-hi { transform: scaleY(1.24); background: var(--cyan); }
+.visual-pipeline { position: relative; height: 148px; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 34px 16px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+.pipeline-row { display: grid; grid-template-columns: 74px 1fr 28px; align-items: center; gap: 10px; font-size: 11.5px; color: var(--ink-soft); }
+.pipeline-bar { height: 7px; border-radius: 999px; background: var(--ice); overflow: hidden; }
+.pipeline-bar span { display: block; height: 100%; border-radius: 999px; background: var(--brand); width: 0; transition: width .6s cubic-bezier(.25,.8,.4,1); }
+.card:hover .pipeline-bar span { width: var(--fill, 50%); }
+.pipeline-row.pipeline-hi .pipeline-bar span { background: var(--cyan); }
+.pipeline-count { font-weight: 700; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
 .kpi-chip { position: absolute; top: 8px; right: 8px; min-width: 96px; text-align: center; background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; font-size: 11.5px; font-weight: 700; color: var(--brand); }
 .kpi-chip span { display: inline-block; transition: opacity .2s ease, transform .2s ease; }
 .kpi-chip span.swap { opacity: 0; transform: translateY(3px); }
@@ -211,7 +215,7 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .gauge-pivot { fill: var(--ink); }
 .gauge-needle { transform-box: view-box; transform-origin: 70px 70px; transform: rotate(-18deg); transition: transform .7s cubic-bezier(.34,1.56,.64,1); }
 .card:hover .gauge-needle { transform: rotate(82deg); }
-@media (prefers-reduced-motion: reduce) { .gauge-needle, .bar-col.bar-hi, .sheet-cursor, .sheet-select, .ai-tag-bar span { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .gauge-needle, .pipeline-bar span, .sheet-cursor, .sheet-select, .ai-tag-bar span { transition: none; } }
 .gauge-stages { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; color: var(--ink-soft); }
 .gauge-stages svg { width: 12px; height: 10px; stroke: var(--brand); stroke-width: 1.6; fill: none; flex-shrink: 0; }
 
@@ -276,6 +280,9 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .principle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-top: 36px; border-top: 1px solid var(--border); }
 @media (max-width: 900px) { .principle-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 500px) { .principle-grid { grid-template-columns: 1fr; } }
+.principle-icon { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; margin-bottom: 12px; transition: transform .25s ease; }
+.principle-icon svg { width: 18px; height: 18px; }
+.principle:hover .principle-icon { transform: scale(1.1) rotate(-4deg); }
 .principle h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
 .principle p { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
 
@@ -331,6 +338,7 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 /* ---------- Gateway (Company / Engineering) ---------- */
 .gateway-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
 @media (max-width: 800px) { .gateway-grid { grid-template-columns: 1fr; gap: 40px; } }
+.gateway-card:hover .card-icon { transform: scale(1.1) rotate(-4deg); }
 .gateway-card h2 { margin-bottom: 16px; }
 .gateway-card p.lede { margin-bottom: 26px; }
 

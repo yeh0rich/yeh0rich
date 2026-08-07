@@ -96,12 +96,11 @@
         <div class="tag-row"><span class="tag">ERP</span><span class="tag">CRM</span><span class="tag">VMS</span></div>
       </article>
       <article class="card reveal">
-        <div class="card-visual visual-bars" aria-hidden="true">
-          <div class="bar-col" style="height:34%"></div>
-          <div class="bar-col" style="height:48%"></div>
-          <div class="bar-col bar-hi" style="height:74%"></div>
-          <div class="bar-col" style="height:60%"></div>
-          <div class="bar-col" style="height:85%"></div>
+        <div class="card-visual visual-pipeline" aria-hidden="true">
+          <div class="pipeline-row"><span class="pipeline-label">Applied</span><div class="pipeline-bar"><span style="--fill:100%"></span></div><span class="pipeline-count">240</span></div>
+          <div class="pipeline-row"><span class="pipeline-label">Screened</span><div class="pipeline-bar"><span style="--fill:58%"></span></div><span class="pipeline-count">96</span></div>
+          <div class="pipeline-row"><span class="pipeline-label">Interviewed</span><div class="pipeline-bar"><span style="--fill:32%"></span></div><span class="pipeline-count">42</span></div>
+          <div class="pipeline-row pipeline-hi"><span class="pipeline-label">Placed</span><div class="pipeline-bar"><span style="--fill:16%"></span></div><span class="pipeline-count">18</span></div>
           <span class="kpi-chip"><span id="kpiChip">↑ 18% fill rate</span></span>
         </div>
         <h3>Workforce Systems</h3>
@@ -200,10 +199,22 @@
       </article>
     </div>
     <div class="principle-grid reveal">
-      <div class="principle"><h4>Decisions</h4><p>Clear ownership, documented decisions, short escalation paths.</p></div>
-      <div class="principle"><h4>Architecture</h4><p>Technical guardrails and reviews ahead of consequential changes.</p></div>
-      <div class="principle"><h4>Quality Gates</h4><p>Defined checks for scope, function, integration and release.</p></div>
-      <div class="principle"><h4>Risk &amp; Change</h4><p>Early visibility into dependencies, changes and project risk.</p></div>
+      <div class="principle">
+        <div class="principle-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg></div>
+        <h4>Decisions</h4><p>Clear ownership, documented decisions, short escalation paths.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 16l9 5 9-5"/><path d="M3 12l9 5 9-5"/></svg></div>
+        <h4>Architecture</h4><p>Technical guardrails and reviews ahead of consequential changes.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19 6.5V12c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6.5l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+        <h4>Quality Gates</h4><p>Defined checks for scope, function, integration and release.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3"/><path d="M18 3v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3"/><path d="M6 21v-5h5"/></svg></div>
+        <h4>Risk &amp; Change</h4><p>Early visibility into dependencies, changes and project risk.</p>
+      </div>
     </div>
     <a href="#next" class="link-arrow reveal">Delivery model in detail <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
 
@@ -308,11 +319,13 @@
 <section class="section section-light" id="next">
   <div class="container gateway-grid">
     <article class="gateway-card reveal">
+      <div class="card-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l8-3 8 3v15"/><path d="M4 21h16"/><path d="M9 21v-5h6v5"/><path d="M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></div>
       <h2>A focused organization for demanding systems.</h2>
       <p class="lede">Learn more about Alpview, our delivery model, and the accountability behind long-term custom enterprise systems.</p>
       <a href="#contact" class="btn btn-outline">Get to know the company <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
     </article>
     <article class="gateway-card reveal">
+      <div class="card-icon icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div>
       <h2>For people who want ownership in their code.</h2>
       <p class="lede">Our teams work remote on long-term custom software projects for the DACH market. We value technical depth, initiative, clear communication, and the professional use of modern AI tools.</p>
       <a href="#contact" class="btn btn-outline">How we work <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
