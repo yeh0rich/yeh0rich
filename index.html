@@ -56,21 +56,57 @@
 
 <!-- ======= HERO ======= -->
 <section class="hero" id="top">
-  <div class="container">
-  <div class="hero-inner">
-    <span class="hero-badge">Enterprise Software Engineering · DACH</span>
-    <h1>Software for companies,<br><span class="highlight">whose processes don't allow a standard solution.</span></h1>
-    <p class="hero-sub">Alpview builds custom ERP, CRM, vendor-management and workforce solutions, along with AI-powered business applications, for enterprises across the DACH region — on a client-commissioned basis.</p>
-    <div class="hero-actions">
-      <a href="#solutions" class="btn btn-primary">Discover capabilities <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
-      <a href="#next" class="btn btn-outline">Engineering at Alpview <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Software for companies,<br><span class="highlight">whose processes don't allow a standard solution.</span></h1>
+      <p class="hero-sub">Alpview builds custom ERP, CRM, vendor-management and workforce solutions, along with AI-powered business applications, for enterprises across the DACH region — on a client-commissioned basis.</p>
+      <div class="hero-actions">
+        <a href="#solutions" class="btn btn-primary">Discover capabilities <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+        <a href="#next" class="btn btn-outline">Engineering at Alpview <svg class="arrow" viewBox="0 0 14 12" aria-hidden="true"><path class="arrow-stem" d="M1.5 6H10"/><path class="arrow-head" d="M6.5 2l4.5 4-4.5 4"/></svg></a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-value accent-text">30+</div><div class="hero-stat-label">Software specialists in active projects</div></div>
+        <div class="hero-stat"><div class="hero-stat-value accent-text">End-to-end</div><div class="hero-stat-label">From product strategy to operations</div></div>
+        <div class="hero-stat"><div class="hero-stat-value accent-text">DACH</div><div class="hero-stat-label">Focus on Germany, Austria and Switzerland</div></div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-value accent-text">30+</div><div class="hero-stat-label">Software specialists in active projects</div></div>
-      <div class="hero-stat"><div class="hero-stat-value accent-text">End-to-end</div><div class="hero-stat-label">From product strategy to operations</div></div>
-      <div class="hero-stat"><div class="hero-stat-value accent-text">DACH</div><div class="hero-stat-label">Focus on Germany, Austria and Switzerland</div></div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="dash-card dash-main">
+        <div class="dash-header"><span class="dash-title">Delivery overview</span></div>
+        <div class="dash-metric">
+          <span class="dash-label">Active engineering capacity</span>
+          <span class="dash-value" id="dashValue" data-target="32">0</span>
+          <span class="dash-delta">↑ 4 specialists added this quarter</span>
+        </div>
+        <div class="dash-chart-wrap">
+          <svg class="dash-chart" id="dashChart" viewBox="0 0 320 110" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2e50fc" stop-opacity=".3"/>
+                <stop offset="1" stop-color="#2e50fc" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#chartFill)" d="M0,92 Q40,86 64,78 T128,58 T192,40 T256,22 L320,15 L320,110 L0,110 Z"/>
+            <path class="chart-line" fill="none" stroke="#2e50fc" stroke-width="2.2" stroke-linecap="round" d="M0,92 Q40,86 64,78 T128,58 T192,40 T256,22 L320,15"/>
+            <line id="chartCursor" x1="0" x2="0" y1="0" y2="110" stroke="#06172b" stroke-opacity=".22" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>
+          </svg>
+          <div class="chart-tip" id="chartTip" hidden></div>
+        </div>
+        <div class="dash-row">
+          <div class="dash-cell"><span class="dash-cell-label">Uptime</span><span class="dash-cell-value">99.9%</span></div>
+          <div class="dash-cell"><span class="dash-cell-label">Response</span><span class="dash-cell-value">&lt;4h</span></div>
+          <div class="dash-cell"><span class="dash-cell-label">Projects</span><span class="dash-cell-value">18</span></div>
+        </div>
+      </div>
+      <div class="dash-card dash-float dash-float-bottom">
+        <span class="float-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 1 8 0"/><path d="M5 12h2M17 12h2M12 5v2M12 17v2"/></svg></span>
+        <div><span class="float-title">Migration completed</span><span class="float-sub">Legacy ERP → Platform</span></div>
+      </div>
+      <div class="dash-card dash-float dash-float-top">
+        <span class="float-icon icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><span class="float-title">Deployment shipped</span><span class="float-sub">Workforce Portal v2.4</span></div>
+      </div>
     </div>
-  </div>
   </div>
 </section>
 

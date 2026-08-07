@@ -73,6 +73,48 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   }, 2800);
 })();
 
+// Hero dashboard: count up the capacity metric, tooltip on chart hover
+(() => {
+  const value = document.getElementById('dashValue');
+  if (!value) return;
+  const target = parseInt(value.dataset.target, 10);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) { value.textContent = target; } else {
+    const start = performance.now(), duration = 1200;
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      value.textContent = Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    setTimeout(() => requestAnimationFrame(tick), 500);
+  }
+
+  const svg = document.getElementById('dashChart');
+  const cursor = document.getElementById('chartCursor');
+  const tip = document.getElementById('chartTip');
+  if (svg && cursor && tip) {
+    const quarters = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6'];
+    svg.addEventListener('pointermove', (e) => {
+      const r = svg.getBoundingClientRect();
+      const fx = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      const x = fx * 320;
+      cursor.setAttribute('x1', x); cursor.setAttribute('x2', x);
+      cursor.setAttribute('visibility', 'visible');
+      const q = quarters[Math.min(quarters.length - 1, Math.floor(fx * quarters.length))];
+      const capacity = Math.round(18 + fx * 14);
+      tip.textContent = `${q} · ${capacity} specialists`;
+      tip.hidden = false;
+      tip.style.left = (fx * r.width) + 'px';
+      tip.style.top = (92 - fx * 70) / 110 * r.height + 'px';
+    });
+    svg.addEventListener('pointerleave', () => {
+      cursor.setAttribute('visibility', 'hidden');
+      tip.hidden = true;
+    });
+  }
+})();
+
 // Contact form (demo handler — wire this up to a real backend/API before launch)
 const form = document.getElementById('contactForm');
 form.addEventListener('submit', (e) => {
