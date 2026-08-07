@@ -56,7 +56,6 @@
 
 <!-- ======= HERO ======= -->
 <section class="hero" id="top">
-  <div class="hero-grid" aria-hidden="true"></div>
   <div class="container hero-inner">
     <span class="hero-badge">Enterprise Software Engineering · DACH</span>
     <h1>Software for companies,<br><span class="highlight">whose processes don't allow a standard solution.</span></h1>
@@ -83,25 +82,56 @@
     </div>
     <div class="solutions-grid">
       <article class="card reveal">
-        <div class="card-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></div>
+        <div class="card-visual visual-sheet" aria-hidden="true">
+          <div class="sheet-row sheet-head"><span class="sheet-cell">Order</span><span class="sheet-cell">Client</span><span class="sheet-cell">Status</span></div>
+          <div class="sheet-row"><span class="sheet-cell">#8825</span><span class="sheet-cell">Kessler AG</span><span class="sheet-cell status-ok">OK</span></div>
+          <div class="sheet-row"><span class="sheet-cell">#8826</span><span class="sheet-cell">Nordbau</span><span class="sheet-cell">Pending</span></div>
+          <div class="sheet-row"><span class="sheet-cell">#8827</span><span class="sheet-cell">Vertex Log.</span><span class="sheet-cell status-ok">OK</span></div>
+          <span class="sheet-select"></span>
+          <span class="sheet-cursor"></span>
+        </div>
         <h3>Enterprise Operations</h3>
         <p>Custom software for customer, order, partner, approval and billing processes — with ERP, CRM and vendor-management scope.</p>
         <div class="tag-row"><span class="tag">ERP</span><span class="tag">CRM</span><span class="tag">VMS</span></div>
       </article>
       <article class="card reveal">
-        <div class="card-icon icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="18" cy="8.5" r="2.4"/><path d="M14.7 14.3c2.7.4 4.8 2.4 4.8 5.2"/></svg></div>
+        <div class="card-visual visual-bars" aria-hidden="true">
+          <div class="bar-col" style="height:38%"></div>
+          <div class="bar-col" style="height:52%"></div>
+          <div class="bar-col bar-hi" style="height:74%"></div>
+          <div class="bar-col" style="height:60%"></div>
+          <div class="bar-col" style="height:85%"></div>
+          <span class="kpi-chip"><span id="kpiChip">↑ 18% fill rate</span></span>
+        </div>
         <h3>Workforce Systems</h3>
         <p>Purpose-built applications for recruiting, candidates, deployments, time, documents, communication and billing.</p>
         <div class="tag-row"><span class="tag">ATS</span><span class="tag">Mobile</span><span class="tag">Portals</span></div>
       </article>
       <article class="card reveal">
-        <div class="card-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="6" r="1.8"/><circle cx="19.5" cy="6" r="1.8"/><circle cx="4.5" cy="18" r="1.8"/><circle cx="19.5" cy="18" r="1.8"/><path d="M9.9 10.3 6.4 7.3M14.1 10.3l3.5-3M9.9 13.7l-3.5 3M14.1 13.7l3.5 3"/></svg></div>
+        <div class="card-visual visual-ai" aria-hidden="true">
+          <div class="ai-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <span id="aiTyped">vendor_contract_q3.pdf</span><span class="ai-caret"></span>
+          </div>
+          <div class="ai-tags-mini">
+            <div class="ai-tag-mini"><span>Contract</span><div class="ai-tag-bar"><span style="--fill:92%"></span></div></div>
+            <div class="ai-tag-mini"><span>Vendor mgmt</span><div class="ai-tag-bar"><span style="--fill:78%"></span></div></div>
+          </div>
+        </div>
         <h3>AI-enabled Operations</h3>
         <p>Applied AI for documents, matching, search, communication, decisions and process automation.</p>
         <div class="tag-row"><span class="tag">AI</span><span class="tag">Search</span><span class="tag">Automation</span></div>
       </article>
       <article class="card reveal">
-        <div class="card-icon icon-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><circle cx="4" cy="5" r="1.8"/><circle cx="20" cy="5" r="1.8"/><circle cx="4" cy="19" r="1.8"/><circle cx="20" cy="19" r="1.8"/><path d="M9.9 10.3 5.5 6.2M14.1 10.3l4.4-4.1M9.9 13.7l-4.4 4.1M14.1 13.7l4.4 4.1"/></svg></div>
+        <div class="card-visual visual-gauge" aria-hidden="true">
+          <svg class="gauge-svg" viewBox="0 0 140 84">
+            <path class="gauge-track" d="M14,70 A56,56 0 0 1 126,70" fill="none" stroke-width="10" stroke-linecap="round"/>
+            <path class="gauge-fill" d="M14,70 A56,56 0 0 1 126,70" fill="none" stroke-width="10" stroke-linecap="round"/>
+            <g class="gauge-needle"><path d="M70,70 L70,24" stroke-width="3" stroke-linecap="round"/></g>
+            <circle class="gauge-pivot" cx="70" cy="70" r="6"/>
+          </svg>
+          <div class="gauge-stages"><span>Legacy</span><svg viewBox="0 0 14 12"><path d="M1.5 6H10M6.5 2l4.5 4-4.5 4"/></svg><span>Modern</span></div>
+        </div>
         <h3>Modernization &amp; Integration</h3>
         <p>Architecture, APIs, migration and the controlled replacement of business-critical legacy systems.</p>
         <div class="tag-row"><span class="tag">Architecture</span><span class="tag">APIs</span><span class="tag">Migration</span></div>
@@ -138,7 +168,7 @@
 </section>
 
 <!-- ======= DELIVERY MODEL ======= -->
-<section class="section section-tint" id="delivery">
+<section class="section section-light" id="delivery">
   <div class="container">
     <div class="section-heading reveal">
       <p class="eyebrow">An integrated delivery model</p>
@@ -276,7 +306,7 @@
 </section>
 
 <!-- ======= GATEWAY: COMPANY / ENGINEERING ======= -->
-<section class="section section-tint" id="next">
+<section class="section section-light" id="next">
   <div class="container gateway-grid">
     <article class="gateway-card reveal">
       <p class="eyebrow">Company</p>

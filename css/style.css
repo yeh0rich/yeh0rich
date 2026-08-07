@@ -134,7 +134,6 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
     radial-gradient(560px 460px at 46% 40%, rgba(49,203,198,.1), transparent 62%),
     radial-gradient(600px 500px at 6% 110%, rgba(36,92,255,.1), transparent 60%);
 }
-.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(6,23,43,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(6,23,43,.05) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, #000 0%, transparent 85%); }
 .hero-inner { position: relative; max-width: 780px; }
 .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: .05em; color: var(--brand); text-transform: uppercase; margin-bottom: 22px; }
 .hero-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); }
@@ -166,6 +165,67 @@ h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.
 .solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 @media (max-width: 960px) { .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .solutions-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Solutions grid: interactive service visuals ---------- */
+.card-visual { margin-bottom: 20px; }
+
+/* Enterprise Operations — mini order sheet, cursor drag-selects a range on hover */
+.visual-sheet { position: relative; height: 132px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; font-size: 11px; background: #fff; }
+.sheet-row { display: grid; grid-template-columns: 1.2fr 1.3fr 1fr; height: 25%; }
+.sheet-row + .sheet-row { border-top: 1px solid var(--border); }
+.sheet-cell { display: flex; align-items: center; padding: 0 8px; border-right: 1px solid var(--border); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sheet-cell:last-child { border-right: none; }
+.sheet-head { background: var(--ink); }
+.sheet-head .sheet-cell { color: #fff; font-weight: 700; border-right-color: rgba(255,255,255,.16); }
+.sheet-cell.status-ok { color: var(--brand); font-weight: 700; }
+.sheet-cursor {
+  position: absolute; width: 8px; height: 8px; top: 37.5%; left: 32%;
+  background: var(--brand); border: 1.5px solid #fff; outline: 1px solid var(--brand); border-radius: 1px;
+  margin: -4px; z-index: 2;
+  transition: top .45s cubic-bezier(.25,.8,.4,1), left .45s cubic-bezier(.25,.8,.4,1);
+}
+.card:hover .sheet-cursor { top: 87.5%; left: 84%; }
+.sheet-select {
+  position: absolute; top: 12.5%; left: 32%; width: 0; height: 0; opacity: 0;
+  border: 2px solid var(--brand); background: rgba(36,92,255,.08); pointer-events: none;
+  transition: width .45s cubic-bezier(.25,.8,.4,1), height .45s cubic-bezier(.25,.8,.4,1), opacity .3s ease;
+}
+.card:hover .sheet-select { width: 50%; height: 62%; opacity: 1; }
+
+/* Workforce Systems — placement bar chart with a floating KPI chip that cycles */
+.visual-bars { position: relative; height: 132px; display: flex; align-items: flex-end; gap: 8px; padding: 10px 8px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+.bar-col { flex: 1; background: var(--ice); border-radius: 3px 3px 0 0; transition: transform .5s cubic-bezier(.25,.8,.4,1), background .5s ease; transform-box: fill-box; transform-origin: bottom; }
+.bar-col.bar-hi { background: var(--brand); }
+.card:hover .bar-col.bar-hi { transform: scaleY(1.24); background: var(--cyan); }
+.kpi-chip { position: absolute; top: 8px; right: 8px; min-width: 96px; text-align: center; background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; font-size: 11.5px; font-weight: 700; color: var(--brand); }
+.kpi-chip span { display: inline-block; transition: opacity .2s ease, transform .2s ease; }
+.kpi-chip span.swap { opacity: 0; transform: translateY(3px); }
+
+/* AI-enabled Operations — typed document name + classification confidence bars */
+.visual-ai { display: flex; flex-direction: column; gap: 10px; height: 132px; justify-content: center; border: 1px solid var(--border); border-radius: 8px; background: #fff; padding: 14px; }
+.ai-search { display: flex; align-items: center; gap: 7px; background: var(--ice); border: 1px solid var(--border); border-radius: 999px; padding: 7px 12px; font-size: 12px; color: var(--ink-soft); min-width: 0; }
+.ai-search svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--ink-soft); }
+#aiTyped { display: inline-block; min-width: 150px; white-space: nowrap; overflow: hidden; }
+.ai-caret { width: 1px; height: 12px; background: var(--ink-soft); display: inline-block; animation: caretBlink 1s step-end infinite; }
+@keyframes caretBlink { 50% { opacity: 0; } }
+.ai-tags-mini { display: flex; flex-direction: column; gap: 7px; }
+.ai-tag-mini { display: grid; grid-template-columns: 1fr 32px; align-items: center; gap: 8px; font-size: 11px; color: var(--ink-soft); }
+.ai-tag-bar { height: 5px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.ai-tag-bar span { display: block; height: 100%; background: var(--brand); border-radius: 999px; width: 0; transition: width .6s ease .1s; }
+.card:hover .ai-tag-bar span { width: var(--fill, 80%); }
+
+/* Modernization & Integration — migration gauge, needle sweeps to "Modern" on hover */
+.visual-gauge { display: flex; flex-direction: column; align-items: center; gap: 4px; height: 132px; justify-content: center; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+.gauge-svg { width: 140px; overflow: visible; }
+.gauge-track { stroke: var(--border); }
+.gauge-fill { stroke: var(--brand); opacity: .9; }
+.gauge-needle path { stroke: var(--ink); }
+.gauge-pivot { fill: var(--ink); }
+.gauge-needle { transform-box: view-box; transform-origin: 70px 70px; transform: rotate(-18deg); transition: transform .7s cubic-bezier(.34,1.56,.64,1); }
+.card:hover .gauge-needle { transform: rotate(82deg); }
+@media (prefers-reduced-motion: reduce) { .gauge-needle, .bar-col.bar-hi, .sheet-cursor, .sheet-select, .ai-tag-bar span { transition: none; } }
+.gauge-stages { display: flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; color: var(--ink-soft); }
+.gauge-stages svg { width: 12px; height: 10px; stroke: var(--brand); stroke-width: 1.6; fill: none; flex-shrink: 0; }
 
 /* ---------- Industry / hub diagram ---------- */
 .industry-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
