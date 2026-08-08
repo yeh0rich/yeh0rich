@@ -147,15 +147,12 @@
       <article class="card reveal">
         <div class="card-visual visual-connect" aria-hidden="true">
           <svg class="connect-lines" viewBox="0 0 200 130" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="aiLineGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#2e50fc"/>
-                <stop offset="1" stop-color="#31cbc6"/>
-              </linearGradient>
-            </defs>
-            <path class="connect-path" stroke="url(#aiLineGrad)" d="M50,65 C95,65 110,26 156,26"/>
-            <path class="connect-path" stroke="url(#aiLineGrad)" d="M50,65 L156,65"/>
-            <path class="connect-path" stroke="url(#aiLineGrad)" d="M50,65 C95,65 110,104 156,104"/>
+            <path class="connect-path" d="M50,65 C95,65 110,26 156,26"/>
+            <path class="connect-path" d="M50,65 L156,65"/>
+            <path class="connect-path" d="M50,65 C95,65 110,104 156,104"/>
+            <circle class="connect-trail" r="7"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite" path="M50,65 C95,65 110,26 156,26"/></circle>
+            <circle class="connect-trail dot-cyan" r="7"><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite" path="M50,65 L156,65"/></circle>
+            <circle class="connect-trail" r="7"><animateMotion dur="2.6s" begin="1.8s" repeatCount="indefinite" path="M50,65 C95,65 110,104 156,104"/></circle>
             <circle class="connect-dot" r="3.5"><animateMotion dur="2.6s" begin="0s" repeatCount="indefinite" path="M50,65 C95,65 110,26 156,26"/></circle>
             <circle class="connect-dot dot-cyan" r="3.5"><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite" path="M50,65 L156,65"/></circle>
             <circle class="connect-dot" r="3.5"><animateMotion dur="2.6s" begin="1.8s" repeatCount="indefinite" path="M50,65 C95,65 110,104 156,104"/></circle>
@@ -180,14 +177,10 @@
       <article class="card card-wide reveal">
         <div class="card-visual visual-connect" aria-hidden="true">
           <svg class="connect-lines" viewBox="0 0 320 160" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="modLineGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#2e50fc"/>
-                <stop offset="1" stop-color="#31cbc6"/>
-              </linearGradient>
-            </defs>
-            <path class="connect-path" stroke="url(#modLineGrad)" d="M48,80 Q104,20 160,80"/>
-            <path class="connect-path" stroke="url(#modLineGrad)" d="M160,80 Q216,140 272,80"/>
+            <path class="connect-path" d="M48,80 Q104,20 160,80"/>
+            <path class="connect-path" d="M160,80 Q216,140 272,80"/>
+            <circle class="connect-trail" r="8"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" path="M48,80 Q104,20 160,80"/></circle>
+            <circle class="connect-trail dot-cyan" r="8"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M160,80 Q216,140 272,80"/></circle>
             <circle class="connect-dot" r="4"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" path="M48,80 Q104,20 160,80"/></circle>
             <circle class="connect-dot dot-cyan" r="4"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M160,80 Q216,140 272,80"/></circle>
           </svg>
@@ -221,18 +214,18 @@
     </div>
     <div class="hub reveal" aria-label="Connected workforce systems">
       <svg class="hub-spokes" viewBox="0 0 600 500" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="hubLineGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#2e50fc"/>
-            <stop offset="1" stop-color="#31cbc6"/>
-          </linearGradient>
-        </defs>
-        <path class="hub-spoke" stroke="url(#hubLineGrad)" d="M300 250 100 100"/>
-        <path class="hub-spoke" stroke="url(#hubLineGrad)" d="M300 250 300 55"/>
-        <path class="hub-spoke" stroke="url(#hubLineGrad)" d="M300 250 500 100"/>
-        <path class="hub-spoke" stroke="url(#hubLineGrad)" d="M300 250 100 400"/>
-        <path class="hub-spoke" stroke="url(#hubLineGrad)" d="M300 250 300 445"/>
-        <path class="hub-spoke" stroke="url(#hubLineGrad)" d="M300 250 500 400"/>
+        <path class="hub-spoke" d="M300 250 100 100"/>
+        <path class="hub-spoke" d="M300 250 300 55"/>
+        <path class="hub-spoke" d="M300 250 500 100"/>
+        <path class="hub-spoke" d="M300 250 100 400"/>
+        <path class="hub-spoke" d="M300 250 300 445"/>
+        <path class="hub-spoke" d="M300 250 500 400"/>
+        <circle class="hub-trail" r="9"><animateMotion dur="3s" begin="0s" repeatCount="indefinite" path="M300 250 100 100"/></circle>
+        <circle class="hub-trail dot-cyan" r="9"><animateMotion dur="3s" begin="0.5s" repeatCount="indefinite" path="M300 250 300 55"/></circle>
+        <circle class="hub-trail" r="9"><animateMotion dur="3s" begin="1s" repeatCount="indefinite" path="M300 250 500 100"/></circle>
+        <circle class="hub-trail dot-cyan" r="9"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M300 250 100 400"/></circle>
+        <circle class="hub-trail" r="9"><animateMotion dur="3s" begin="2s" repeatCount="indefinite" path="M300 250 300 445"/></circle>
+        <circle class="hub-trail dot-cyan" r="9"><animateMotion dur="3s" begin="2.5s" repeatCount="indefinite" path="M300 250 500 400"/></circle>
         <circle class="hub-dot" r="5"><animateMotion dur="3s" begin="0s" repeatCount="indefinite" path="M300 250 100 100"/></circle>
         <circle class="hub-dot dot-cyan" r="5"><animateMotion dur="3s" begin="0.5s" repeatCount="indefinite" path="M300 250 300 55"/></circle>
         <circle class="hub-dot" r="5"><animateMotion dur="3s" begin="1s" repeatCount="indefinite" path="M300 250 500 100"/></circle>
