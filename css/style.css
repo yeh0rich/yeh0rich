@@ -68,8 +68,11 @@ ul, ol { list-style: none; }
 .site-header.bar-active .nav { background: rgba(248,250,252,.95); backdrop-filter: blur(12px); border-color: var(--border); }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-mark { width: 38px; height: 38px; }
-.site-header .logo-mark { filter: brightness(0) invert(1); transition: filter .25s ease; }
-.site-header.bar-active .logo-mark { filter: none; }
+.logo-svg .logo-outer, .logo-svg .logo-inner { transition: fill .25s ease; }
+.logo-svg .logo-outer { fill: #fff; }
+.logo-svg .logo-inner { fill: #fff; }
+.site-header.bar-active .logo-svg .logo-outer { fill: var(--ink); }
+.site-header.bar-active .logo-svg .logo-inner { fill: var(--brand); }
 .logo-word { font-family: 'Quicksand', var(--font); font-weight: 700; font-size: 19px; letter-spacing: .01em; text-transform: lowercase; color: #fff; transition: color .25s ease; }
 .site-header.bar-active .logo-word { color: var(--ink); }
 .nav-links { display: flex; gap: 28px; }
