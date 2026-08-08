@@ -33,6 +33,83 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+// Scroll-driven orbit carousels (Industry, Cases): a tall wrapper drives
+// scroll progress through a sticky viewport; nodes are positioned around a
+// ring by trig so exactly one orbits into the middle-left anchor at a time,
+// and the copy panel swaps to describe whichever node is currently there.
+(() => {
+  const wraps = document.querySelectorAll('.carousel-pin-wrap');
+  if (!wraps.length) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  wraps.forEach((wrap) => {
+    const sticky = wrap.querySelector('.carousel-sticky');
+    const ring = wrap.querySelector('.carousel-ring');
+    const nodes = Array.from(wrap.querySelectorAll('.carousel-node'));
+    const titleEl = wrap.querySelector('.carousel-detail-title');
+    const descEl = wrap.querySelector('.carousel-detail-desc');
+    const indexEl = wrap.querySelector('.carousel-detail-index');
+    const labelEl = wrap.querySelector('.work-label');
+    const contextEl = wrap.querySelector('.carousel-detail-context');
+    const systemEl = wrap.querySelector('.carousel-detail-system');
+    const n = nodes.length;
+    if (!ring || !n) return;
+
+    const placeStatic = () => {
+      const R = ring.clientWidth / 2 - 30;
+      nodes.forEach((node, i) => {
+        const angle = (180 + (i * 360) / n) * (Math.PI / 180);
+        node.style.transform = `translate(${Math.cos(angle) * R}px, ${Math.sin(angle) * R}px)`;
+      });
+    };
+
+    // Small screens and reduced motion: lay the ring out evenly, no pin/scroll-link.
+    if (reduced || window.innerWidth < 900) {
+      placeStatic();
+      window.addEventListener('resize', placeStatic);
+      return;
+    }
+
+    let activeIndex = -1;
+    let ticking = false;
+
+    const setActive = (i) => {
+      if (i === activeIndex) return;
+      activeIndex = i;
+      const active = nodes[i];
+      nodes.forEach((node, idx) => node.classList.toggle('active', idx === i));
+      if (titleEl) titleEl.innerHTML = active.dataset.title;
+      if (descEl) descEl.textContent = active.dataset.desc;
+      if (indexEl) indexEl.textContent = `0${i + 1} / 0${n}`;
+      if (labelEl && active.dataset.label) labelEl.textContent = active.dataset.label;
+      if (contextEl && active.dataset.context) contextEl.textContent = active.dataset.context;
+      if (systemEl && active.dataset.system) systemEl.textContent = active.dataset.system;
+    };
+
+    const update = () => {
+      ticking = false;
+      const rect = wrap.getBoundingClientRect();
+      const scrollable = wrap.offsetHeight - sticky.offsetHeight;
+      const progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
+      const R = ring.clientWidth / 2 - 30;
+      const rotation = ((n - 1) * 360) / n * progress; // n-1 gaps across n stops
+      nodes.forEach((node, i) => {
+        const angleDeg = 180 + (i * 360) / n - rotation;
+        const rad = angleDeg * (Math.PI / 180);
+        node.style.transform = `translate(${Math.cos(rad) * R}px, ${Math.sin(rad) * R}px)`;
+      });
+      setActive(Math.min(n - 1, Math.round(progress * (n - 1))));
+    };
+
+    const onScroll = () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  });
+})();
+
 // Workforce Systems card: swap the KPI chip through a few metrics
 (() => {
   const el = document.getElementById('kpiChip');
