@@ -48,7 +48,6 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     const nodes = Array.from(wrap.querySelectorAll('.carousel-node'));
     const titleEl = wrap.querySelector('.carousel-detail-title');
     const descEl = wrap.querySelector('.carousel-detail-desc');
-    const indexEl = wrap.querySelector('.carousel-detail-index');
     const labelEl = wrap.querySelector('.work-label');
     const contextEl = wrap.querySelector('.carousel-detail-context');
     const systemEl = wrap.querySelector('.carousel-detail-system');
@@ -80,7 +79,6 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       nodes.forEach((node, idx) => node.classList.toggle('active', idx === i));
       if (titleEl) titleEl.innerHTML = active.dataset.title;
       if (descEl) descEl.textContent = active.dataset.desc;
-      if (indexEl) indexEl.textContent = `0${i + 1} / 0${n}`;
       if (labelEl && active.dataset.label) labelEl.textContent = active.dataset.label;
       if (contextEl && active.dataset.context) contextEl.textContent = active.dataset.context;
       if (systemEl && active.dataset.system) systemEl.textContent = active.dataset.system;
@@ -168,6 +166,24 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       tip.hidden = true;
     });
   }
+})();
+
+// Footer mega-wordmark: size it so it spans exactly from the left safe-area
+// edge to the right, regardless of viewport width or font metrics.
+(() => {
+  const wrap = document.querySelector('.footer-mega-wrap');
+  const el = document.getElementById('footerMega');
+  if (!wrap || !el) return;
+  const REF = 200;
+  const fit = () => {
+    el.style.fontSize = REF + 'px';
+    const targetWidth = wrap.clientWidth;
+    const currentWidth = el.getBoundingClientRect().width;
+    if (currentWidth > 0) el.style.fontSize = (REF * (targetWidth / currentWidth)) + 'px';
+  };
+  fit();
+  window.addEventListener('resize', fit);
+  document.fonts && document.fonts.ready.then(fit);
 })();
 
 // Contact form (demo handler — wire this up to a real backend/API before launch)
